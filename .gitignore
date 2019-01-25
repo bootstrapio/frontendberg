@@ -1,5 +1,7 @@
 .tmp/
+!app/
 dist/
+frontendberg/
 twentynineteen/
 
 # Git ignore files.
