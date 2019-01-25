@@ -136,6 +136,27 @@ gulp.task('scripts', () =>
       .pipe(gulp.dest('.tmp/library/scripts'))
 );
 
+// Vendor Scripts
+gulp.task('vendor-scripts', () =>
+    gulp.src([
+      './node_modules/jquery/dist/jquery.js',
+      './node_modules/bootstrap/dist/js/bootstrap.bundle.js',
+      './app/library/vendors/font-awesome/v5010.js'
+    ])
+      // .pipe($.newer('.tmp/library/scripts'))
+      .pipe($.sourcemaps.init())
+      .pipe($.babel())
+      .pipe($.sourcemaps.write())
+      .pipe(gulp.dest('.tmp/library/scripts'))
+      .pipe($.concat('vendors.js'))
+      .pipe($.uglify({preserveComments: 'some'}))
+      // Output files
+      .pipe($.size({title: 'Vendor Scripts'}))
+      .pipe($.sourcemaps.write('.'))
+      .pipe(gulp.dest(config.distFolder + '/library/scripts'))
+      .pipe(gulp.dest('.tmp/library/scripts'))
+);
+
 // Scan your HTML for assets & optimize them
 gulp.task('php', () => {
   return gulp.src('app/**/*.php')
@@ -220,7 +241,7 @@ gulp.task('serve:dist', ['default'], () =>
 gulp.task('default', ['clean'], cb =>
   runSequence(
     'styles',
-    ['lint', 'php', 'scripts', 'images', 'copy'],
+    ['lint', 'php', 'scripts', 'vendor-scripts', 'images', 'copy'],
     'generate-service-worker',
     cb
   )
