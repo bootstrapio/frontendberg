@@ -65,7 +65,6 @@ gulp.task('images', () =>
 gulp.task('copy', () =>
   gulp.src([
     'app/style.css',
-    'app/**/*.php',
     '!app/*.html',
     'node_modules/apache-server-configs/'+ config.distFolder + '/.htaccess'
   ], {
@@ -186,7 +185,7 @@ gulp.task('php', () => {
 gulp.task('clean', () => del(['.tmp', config.distFolder, '!'+ config.distFolder + '/.git'], {dot: true}));
 
 // Watch files for changes & reload
-gulp.task('serve', ['scripts', 'styles'], () => {
+gulp.task('serve', ['scripts', 'styles', 'vendor-scripts' ], () => {
   // browserSync({
   //   notify: false,
   //   // Customize the Browsersync console logging prefix
