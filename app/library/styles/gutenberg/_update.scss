@@ -1,0 +1,47 @@
+.gutenberg-update-item {
+  span {
+    color: #999;
+    cursor: pointer;
+    display: block;
+    font-size: 18px;
+    line-height: 22px !important;
+    margin: 0;
+    opacity: .48;
+    position: absolute;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .add {
+    & :hover {
+      color: #78b955;
+    }
+  }
+
+  .drag {
+    & :hover {
+      color: #449dd8;
+    }
+  }
+
+  .remove {
+    & :hover {
+      color: #d04643;
+    }
+  }
+}
+
+// app/library/styles/components/_superscript.scss
+.superscript {
+  .gutenberg-update-item {
+    span {
+      left: -24px;
+    }
+
+    .add {
+      display: none;
+    }
+  }
+}

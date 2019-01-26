@@ -1,0 +1,8 @@
+@import '../../../node_modules/bootstrap/scss/bootstrap';
+
+.frontendberg,
+.editor-block-list__layout {
+  @import
+    'gutenberg/main',
+    'components/main';
+}

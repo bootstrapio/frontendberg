@@ -57,6 +57,7 @@ gulp.task('images', () =>
       progressive: true,
       interlaced: true
     })))
+    .pipe(gulp.dest('.tmp/library/media/images'))
     .pipe(gulp.dest(config.distFolder + '/library/media/images'))
     .pipe($.size({title: 'images'}))
 );
@@ -231,7 +232,7 @@ gulp.task('serve', ['scripts', 'styles', 'admin-scripts', 'gutenberg-scripts' ],
   gulp.watch(['app/**/*.php'], reload);
   gulp.watch(['app/library/styles/**/*.{scss,css}'], ['styles', reload]);
   gulp.watch(['app/library/scripts/**/*.js'], ['lint', 'scripts', reload]);
-  gulp.watch(['app/library/media/images/**/*'], reload);
+  gulp.watch(['app/library/media/images/**/*'], ['images', reload]);
   gulp.watch(['app/library/vendors/**/*.js'], ['scripts', 'admin-scripts', reload]);
   gulp.watch(['app/create-guten-block/gutenberg/dist/blocks.build.js'], ['gutenberg-scripts', reload]);
 });
