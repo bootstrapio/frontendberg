@@ -92,8 +92,8 @@ gulp.task('styles', () => {
 
   // For best performance, don't add Sass partials to `gulp.src`
   return gulp.src([
-    'app/library/styles/**/*.scss',
-    'app/library/styles/**/*.css'
+    './node_modules/bootstrap/dist/css/bootstrap.css',
+    './app/library/styles/main.scss'
   ])
     .pipe($.newer('.tmp/library/styles'))
     .pipe($.sourcemaps.init())
@@ -104,7 +104,8 @@ gulp.task('styles', () => {
     .pipe(gulp.dest('.tmp/library/styles'))
     // Concatenate and minify styles
     .pipe($.if('*.css', $.cssnano()))
-    .pipe($.size({title: 'styles'}))
+    .pipe($.concat('frontendberg.css'))
+    .pipe($.size({title: 'Frontend Styles'}))
     .pipe($.sourcemaps.write('./'))
     .pipe(gulp.dest(config.distFolder + '/library/styles'))
     .pipe(gulp.dest('.tmp/library/styles'));
@@ -115,7 +116,47 @@ gulp.task('styles', () => {
 // `.babelrc` file.
 gulp.task('scripts', () =>
     gulp.src([
-      './app/library/scripts/main.js',
+      './node_modules/jquery/dist/jquery.js',
+      './node_modules/bootstrap/dist/js/bootstrap.bundle.js',
+      './app/library/vendors/font-awesome/v5010.js',
+      './app/library/scripts/main.js'
+    ])
+      .pipe($.newer('.tmp/library/scripts'))
+      .pipe($.sourcemaps.init())
+      .pipe($.babel())
+      .pipe($.sourcemaps.write())
+      .pipe(gulp.dest('.tmp/library/scripts'))
+      .pipe($.concat('frontendberg.js'))
+      .pipe($.uglify({preserveComments: 'some'}))
+      // Output files
+      .pipe($.size({title: 'Frontend Scripts'}))
+      .pipe($.sourcemaps.write('.'))
+      .pipe(gulp.dest(config.distFolder + '/library/scripts'))
+      .pipe(gulp.dest('.tmp/library/scripts'))
+);
+
+gulp.task('admin-scripts', () =>
+    gulp.src([
+      './node_modules/bootstrap/dist/js/bootstrap.bundle.js',
+      './app/library/vendors/font-awesome/v5010.js',
+      './app/library/scripts/main.js'
+    ])
+      .pipe($.newer('.tmp/library/scripts'))
+      .pipe($.sourcemaps.init())
+      .pipe($.babel())
+      .pipe($.sourcemaps.write())
+      .pipe(gulp.dest('.tmp/library/scripts'))
+      .pipe($.concat('admin.js'))
+      .pipe($.uglify({preserveComments: 'some'}))
+      // Output files
+      .pipe($.size({title: 'Admin Scripts'}))
+      .pipe($.sourcemaps.write('.'))
+      .pipe(gulp.dest(config.distFolder + '/library/scripts'))
+      .pipe(gulp.dest('.tmp/library/scripts'))
+);
+
+gulp.task('gutenberg-scripts', () =>
+    gulp.src([
       './app/create-guten-block/gutenberg/dist/blocks.build.js'
     ])
       .pipe($.newer('.tmp/library/scripts'))
@@ -123,31 +164,10 @@ gulp.task('scripts', () =>
       .pipe($.babel())
       .pipe($.sourcemaps.write())
       .pipe(gulp.dest('.tmp/library/scripts'))
-      .pipe($.concat('main.js'))
+      .pipe($.concat('gutenberg.js'))
       .pipe($.uglify({preserveComments: 'some'}))
       // Output files
-      .pipe($.size({title: 'scripts'}))
-      .pipe($.sourcemaps.write('.'))
-      .pipe(gulp.dest(config.distFolder + '/library/scripts'))
-      .pipe(gulp.dest('.tmp/library/scripts'))
-);
-
-// Vendor Scripts
-gulp.task('vendor-scripts', () =>
-    gulp.src([
-      // './node_modules/jquery/dist/jquery.js',
-      './node_modules/bootstrap/dist/js/bootstrap.bundle.js',
-      './app/library/vendors/font-awesome/v5010.js'
-    ])
-      // .pipe($.newer('.tmp/library/scripts'))
-      .pipe($.sourcemaps.init())
-      .pipe($.babel())
-      .pipe($.sourcemaps.write())
-      .pipe(gulp.dest('.tmp/library/scripts'))
-      .pipe($.concat('vendor.js'))
-      .pipe($.uglify({preserveComments: 'some'}))
-      // Output files
-      .pipe($.size({title: 'Vendor Scripts'}))
+      .pipe($.size({title: 'Gutenberg Scripts'}))
       .pipe($.sourcemaps.write('.'))
       .pipe(gulp.dest(config.distFolder + '/library/scripts'))
       .pipe(gulp.dest('.tmp/library/scripts'))
@@ -186,7 +206,7 @@ gulp.task('php', () => {
 gulp.task('clean', () => del(['.tmp', config.distFolder, '!'+ config.distFolder + '/.git'], {dot: true}));
 
 // Watch files for changes & reload
-gulp.task('serve', ['scripts', 'styles', 'vendor-scripts' ], () => {
+gulp.task('serve', ['scripts', 'styles', 'admin-scripts', 'gutenberg-scripts' ], () => {
   // browserSync({
   //   notify: false,
   //   // Customize the Browsersync console logging prefix
@@ -212,8 +232,8 @@ gulp.task('serve', ['scripts', 'styles', 'vendor-scripts' ], () => {
   gulp.watch(['app/library/styles/**/*.{scss,css}'], ['styles', reload]);
   gulp.watch(['app/library/scripts/**/*.js'], ['lint', 'scripts', reload]);
   gulp.watch(['app/library/media/images/**/*'], reload);
-  gulp.watch(['app/library/vendors/**/*.js'], ['vendor-scripts', reload]);
-  gulp.watch(['app/create-guten-block/gutenberg/dist/blocks.build.js'], ['scripts', reload]);
+  gulp.watch(['app/library/vendors/**/*.js'], ['scripts', 'admin-scripts', reload]);
+  gulp.watch(['app/create-guten-block/gutenberg/dist/blocks.build.js'], ['gutenberg-scripts', reload]);
 });
 
 // Build and serve the output from the dist build
@@ -243,7 +263,7 @@ gulp.task('serve:dist', ['default'], () =>
 gulp.task('default', ['clean'], cb =>
   runSequence(
     'styles',
-    ['lint', 'php', 'scripts', 'vendor-scripts', 'images', 'copy'],
+    ['lint', 'php', 'scripts', 'admin-scripts', 'gutenberg-scripts', 'images', 'copy'],
     'generate-service-worker',
     cb
   )
