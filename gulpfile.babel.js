@@ -115,11 +115,8 @@ gulp.task('styles', () => {
 // `.babelrc` file.
 gulp.task('scripts', () =>
     gulp.src([
-      // Note: Since we are not using useref in the scripts build pipeline,
-      //       you need to explicitly list your scripts here in the right order
-      //       to be correctly concatenated
-      './app/library/scripts/main.js'
-      // Other scripts
+      './app/library/scripts/main.js',
+      './app/create-guten-block/gutenberg/dist/blocks.build.js'
     ])
       .pipe($.newer('.tmp/library/scripts'))
       .pipe($.sourcemaps.init())
@@ -138,7 +135,7 @@ gulp.task('scripts', () =>
 // Vendor Scripts
 gulp.task('vendor-scripts', () =>
     gulp.src([
-      './node_modules/jquery/dist/jquery.js',
+      // './node_modules/jquery/dist/jquery.js',
       './node_modules/bootstrap/dist/js/bootstrap.bundle.js',
       './app/library/vendors/font-awesome/v5010.js'
     ])
@@ -147,7 +144,7 @@ gulp.task('vendor-scripts', () =>
       .pipe($.babel())
       .pipe($.sourcemaps.write())
       .pipe(gulp.dest('.tmp/library/scripts'))
-      .pipe($.concat('vendors.js'))
+      .pipe($.concat('vendor.js'))
       .pipe($.uglify({preserveComments: 'some'}))
       // Output files
       .pipe($.size({title: 'Vendor Scripts'}))
@@ -158,11 +155,15 @@ gulp.task('vendor-scripts', () =>
 
 // Scan your HTML for assets & optimize them
 gulp.task('php', () => {
-  return gulp.src('app/**/*.php')
+  return gulp.src([
+    '!app/create-guten-block/**/*',
+    'app/**/*.php'
+  ])
     .pipe($.useref({
       searchPath: '{.tmp,app}',
       noAssets: true
     }))
+    .pipe(gulpReplace('.tmp', config.distFolder))
 
     // Minify any HTML
     .pipe($.if('*.html', $.htmlmin({
@@ -211,6 +212,8 @@ gulp.task('serve', ['scripts', 'styles', 'vendor-scripts' ], () => {
   gulp.watch(['app/library/styles/**/*.{scss,css}'], ['styles', reload]);
   gulp.watch(['app/library/scripts/**/*.js'], ['lint', 'scripts', reload]);
   gulp.watch(['app/library/media/images/**/*'], reload);
+  gulp.watch(['app/library/vendors/**/*.js'], ['vendor-scripts', reload]);
+  gulp.watch(['app/create-guten-block/gutenberg/dist/blocks.build.js'], ['scripts', reload]);
 });
 
 // Build and serve the output from the dist build
