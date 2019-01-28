@@ -12,7 +12,7 @@
 						<figure class="media-icon ">
 							<img alt="" class="img-fluid" src="http://local.frontendberg/wp-content/uploads/2019/01/icon_imovie_mac__el9krw4zjm82_large_2x.png">
 						</figure>
-						<h4>iMovie on MacBook Pro</h4>
+						<h5>iMovie on MacBook Pro</h5>
 					</div>
 					<div class="col">
 						<h3>You have a great touch for making movies.</h3>
@@ -46,7 +46,7 @@
 						<figure class="media-icon ">
 							<img alt="" class="img-fluid" src="http://local.frontendberg/wp-content/uploads/2019/01/icon_imovie_mac__el9krw4zjm82_large_2x.png">
 						</figure>
-						<h4>iMovie on MacBook Pro</h4>
+						<h5>iMovie on MacBook Pro</h5>
 					</div>
 					<div class="col">
 						<h3>You have a great touch for making movies.</h3>
@@ -80,7 +80,7 @@
 						<figure class="media-icon ">
 							<img alt="" class="img-fluid" src="http://local.frontendberg/wp-content/uploads/2019/01/icon_imovie_mac__el9krw4zjm82_large_2x.png">
 						</figure>
-						<h4>iMovie on MacBook Pro</h4>
+						<h5>iMovie on MacBook Pro</h5>
 					</div>
 					<div class="col">
 						<h3>You have a great touch for making movies.</h3>
@@ -106,7 +106,7 @@
 						<figure class="media-icon ">
 							<img alt="" class="img-fluid" src="http://local.frontendberg/wp-content/uploads/2019/01/icon_imovie_mac__el9krw4zjm82_large_2x.png">
 						</figure>
-						<h4>iMovie on MacBook Pro</h4>
+						<h5>iMovie on MacBook Pro</h5>
 					</div>
 					<div class="col">
 						<h3>You have a great touch for making movies.</h3>

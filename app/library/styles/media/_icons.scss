@@ -1,0 +1,19 @@
+.media-icon {
+  height: 64px;
+  margin: 0 16px 0 0;
+  min-width: 64px;
+  width: auto;
+
+  img {
+    height: 64px;
+  }
+
+  &.placeholder {
+    &::after {
+      border-radius: 16px;
+      content: 'ICON';
+      height: 64px;
+      width: 64px;
+    }
+  }
+}

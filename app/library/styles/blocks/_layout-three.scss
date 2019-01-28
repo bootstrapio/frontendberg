@@ -6,16 +6,7 @@
     flex-direction: column;
   }
 
-  .media-image {
-    left: 0;
-    transform: none;
-  }
-
   ~ .layout-three:nth-of-type(even) {
     flex-direction: row-reverse;
-
-    .block-media {
-      direction: rtl;
-    }
   }
 }

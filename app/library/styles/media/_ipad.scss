@@ -1,20 +1,18 @@
 .device-ipad {
   background-image: url('../media/images/ipad-space-gray.png');
   height: 718px;
-  position: relative;
   width: 980px;
 
   img {
     height: 542px;
-    margin-top: 88px;
     width: 722px;
   }
 
   &.placeholder {
     &::after {
-      content: '742px x 556px';
-      height: 556px;
-      width: 742px;
+      content: '722 x 542';
+      height: 542px;
+      width: 722px;
     }
   }
 }
