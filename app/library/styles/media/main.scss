@@ -1,0 +1,33 @@
+img {
+  border: 0;
+}
+
+figure {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin: 0;
+  text-align: center;
+  z-index: 0;
+
+  &.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::after {
+      align-items: center;
+      background: red;
+      direction: ltr;
+      display: flex;
+      justify-content: center;
+    }
+
+    img {
+      display: none;
+    }
+  }
+}
+
+@import
+  'ipad';

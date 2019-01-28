@@ -93,7 +93,6 @@ gulp.task('styles', () => {
 
   // For best performance, don't add Sass partials to `gulp.src`
   return gulp.src([
-    './node_modules/bootstrap/dist/css/bootstrap.css',
     './app/library/styles/main.scss'
   ])
     .pipe($.newer('.tmp/library/styles'))
@@ -120,7 +119,8 @@ gulp.task('scripts', () =>
       './node_modules/jquery/dist/jquery.js',
       './node_modules/bootstrap/dist/js/bootstrap.bundle.js',
       './app/library/vendors/font-awesome/v5010.js',
-      './app/library/scripts/main.js'
+      './app/library/scripts/main.js',
+      './app/library/scripts/media.js'
     ])
       .pipe($.newer('.tmp/library/scripts'))
       .pipe($.sourcemaps.init())
@@ -140,7 +140,8 @@ gulp.task('admin-scripts', () =>
     gulp.src([
       './node_modules/bootstrap/dist/js/bootstrap.bundle.js',
       './app/library/vendors/font-awesome/v5010.js',
-      './app/library/scripts/main.js'
+      './app/library/scripts/main.js',
+      './app/library/scripts/media.js'
     ])
       .pipe($.newer('.tmp/library/scripts'))
       .pipe($.sourcemaps.init())

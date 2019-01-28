@@ -1,0 +1,16 @@
+section {
+  overflow: hidden;
+  padding: 32px 0;
+
+  ~ section:nth-of-type(even) {
+    background-color: #FAFAFA;
+  }
+
+  .block-content {
+    z-index: 1;
+  }
+
+  .container {
+    max-width: 832px;
+  }
+}

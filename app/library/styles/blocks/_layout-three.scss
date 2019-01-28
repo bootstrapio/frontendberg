@@ -1,0 +1,21 @@
+.layout-three {
+  flex-direction: row;
+
+  .row {
+    flex: 0 0 50%;
+    flex-direction: column;
+  }
+
+  .media-image {
+    left: 0;
+    transform: none;
+  }
+
+  ~ .layout-three:nth-of-type(even) {
+    flex-direction: row-reverse;
+
+    .block-media {
+      direction: rtl;
+    }
+  }
+}

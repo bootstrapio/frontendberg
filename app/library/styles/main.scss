@@ -1,8 +1,12 @@
-@import '../../../node_modules/bootstrap/scss/bootstrap';
+@import
+  '../../../node_modules/bootstrap/scss/bootstrap';
 
 .frontendberg,
 .editor-block-list__layout {
   @import
+    'wireframe/main',
     'gutenberg/main',
+    'media/main',
+    'blocks/main',
     'components/main';
 }

@@ -1,0 +1,14 @@
+@import
+  '../vendors/bootstrap/boostrap-docs';
+
+.bd-example-row {
+  .bd-example {
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .row + .row {
+    margin-top: 0;
+  }
+}
