@@ -26,6 +26,7 @@ figure {
       display: flex;
       font-size: 12px;
       justify-content: center;
+      z-index: -1;
     }
 
     img {
@@ -34,6 +35,13 @@ figure {
   }
 }
 
+[class^='device-'], [class*=' device-'] {
+  img {
+    z-index: -1;
+  }
+}
+
 @import
   'icons',
-  'ipad';
+  'ipad',
+  'iphone';

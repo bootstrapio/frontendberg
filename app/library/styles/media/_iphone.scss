@@ -1,0 +1,37 @@
+.device-iphone {
+  background-image: url('../media/images/iphone-space-gray.png');
+  height: 376px;
+  width: 752px;
+
+  img {
+    height: 284px;
+    width: 612px;
+  }
+
+  &.placeholder {
+    &::after {
+      content: '612 x 284';
+      height: 284px;
+      width: 612px;
+    }
+  }
+
+  &.portrait {
+    background-image: url('../media/images/iphone-space-gray-portrait.png');
+    height: 696px;
+    width: 376px;
+
+    img {
+      height: 612px;
+      width: 284px;
+    }
+
+    &.placeholder {
+      &::after {
+        content: '284 x 612';
+        height: 612px;
+        width: 284px;
+      }
+    }
+  }
+}
