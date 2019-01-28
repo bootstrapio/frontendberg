@@ -15,4 +15,23 @@
       width: 722px;
     }
   }
+
+  &.portrait {
+    background-image: url('../media/images/ipad-space-gray-portrait.png');
+    height: 980px;
+    width: 718px;
+
+    img {
+      height: 722px;
+      width: 542px;
+    }
+
+    &.placeholder {
+      &::after {
+        content: '542 x 722';
+        height: 722px;
+        width: 542px;
+      }
+    }
+  }
 }
