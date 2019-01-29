@@ -26,8 +26,8 @@
 				</div>
 				<div class="row block-media">
 					<div class="col">
-						<figure class="media-image device-iphone portrait">
-							<img alt="" class="img-fluid" src="https://www.placehold.it/284x612">
+						<figure class="media-image device-ipad portrait placeholder">
+							<img alt="" class="img-fluid" src="https://www.placehold.it/542x722">
 						</figure>
 					</div>
 				</div>
@@ -60,8 +60,8 @@
 				</div>
 				<div class="row block-media">
 					<div class="col">
-						<figure class="media-image device-iphone">
-							<img alt="" class="img-fluid" src="https://www.placehold.it/612x284">
+						<figure class="media-image device-ipad">
+							<img alt="" class="img-fluid" src="https://www.placehold.it/722x542">
 						</figure>
 					</div>
 				</div>
@@ -86,8 +86,8 @@
 				</div>
 				<div class="row block-media">
 					<div class="col">
-						<figure class="media-image device-iphone portrait">
-							<img alt="" class="img-fluid" src="https://www.placehold.it/284x612">
+						<figure class="media-image device-ipad portrait">
+							<img alt="" class="img-fluid" src="https://www.placehold.it/542x722">
 						</figure>
 					</div>
 				</div>
@@ -120,8 +120,8 @@
 				</div>
 				<div class="row block-media">
 					<div class="col">
-						<figure class="media-image device-iphone">
-							<img alt="" class="img-fluid" src="https://www.placehold.it/612x284">
+						<figure class="media-image device-ipad">
+							<img alt="" class="img-fluid" src="https://www.placehold.it/722x542">
 						</figure>
 					</div>
 				</div>
@@ -146,8 +146,8 @@
 				</div>
 				<div class="row block-media">
 					<div class="col">
-						<figure class="media-image device-iphone">
-							<img alt="" class="img-fluid" src="https://www.placehold.it/612x284">
+						<figure class="media-image device-ipad">
+							<img alt="" class="img-fluid" src="https://www.placehold.it/722x542">
 						</figure>
 					</div>
 				</div>
