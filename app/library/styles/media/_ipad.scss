@@ -1,36 +1,40 @@
 .device-ipad {
   background-image: url('../media/images/ipad-space-gray.png');
-  height: 718px;
-  width: 980px;
+  height: 615px;
+  width: 920px;
 
   img {
-    height: 542px;
-    width: 722px;
+    height: 490px;
+    width: 660px;
   }
 
   &.placeholder {
     &::after {
-      content: '722 x 542';
-      height: 542px;
-      width: 722px;
+      content: '660 x 490';
+      height: 490px;
+      width: 660px;
     }
+  }
+
+  &.landscape {
+    margin: 0 -75px;
   }
 
   &.portrait {
     background-image: url('../media/images/ipad-space-gray-portrait.png');
-    height: 920px;
-    width: 672px;
+    height: 790px;
+    width: 615px;
 
     img {
-      height: 722px;
-      width: 542px;
+      height: 660px;
+      width: 490px;
     }
 
     &.placeholder {
       &::after {
-        content: '542 x 722';
-        height: 722px;
-        width: 542px;
+        content: '490 x 660';
+        height: 660px;
+        width: 490px;
       }
     }
   }
