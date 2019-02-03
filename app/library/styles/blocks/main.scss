@@ -5,6 +5,12 @@
   flex-direction: column;
   justify-content: flex-start;
 
+  background: pink;
+
+  .col {
+    z-index: 1;
+  }
+
   .row {
     margin-left: 0;
     margin-right: 0;

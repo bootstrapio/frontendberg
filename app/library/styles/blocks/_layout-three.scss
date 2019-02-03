@@ -1,6 +1,6 @@
 .layout-three {
   .row {
-    flex: 0 0 50%;
+    flex: 0 0 60%;
     flex-direction: column;
   }
 
@@ -10,5 +10,9 @@
 
   &:nth-child(even) {
     flex-direction: row-reverse;
+
+    .block-media {
+      direction: rtl;
+    }
   }
 }

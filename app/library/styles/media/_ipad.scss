@@ -1,6 +1,6 @@
 .device-ipad {
   background-image: url('../media/images/ipad-space-gray.png');
-  height: 615px;
+  height: 580px;
   width: 920px;
 
   img {
@@ -9,7 +9,7 @@
   }
 
   &.landscape {
-    margin: 0 -75px;
+    margin: 0 -85px;
   }
 
   &.placeholder {
@@ -22,7 +22,8 @@
 
   &.portrait {
     background-image: url('../media/images/ipad-space-gray-portrait.png');
-    height: 790px;
+    height: 745px;
+    margin: 0 -15px;
     width: 615px;
 
     img {
