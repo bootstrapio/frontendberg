@@ -1,0 +1,16 @@
+.intro-one {
+  text-align: center;
+
+  .row {
+    flex-direction: column;
+  }
+
+  .superscript {
+    flex-direction: column;
+    justify-content: center;
+
+    .media-icon {
+      margin: 0 0 16px;
+    }
+  }
+}

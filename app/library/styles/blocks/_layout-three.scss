@@ -1,12 +1,14 @@
 .layout-three {
-  flex-direction: row;
-
   .row {
     flex: 0 0 50%;
     flex-direction: column;
   }
 
-  ~ .layout-three:nth-of-type(even) {
+  &:nth-child(odd) {
+    flex-direction: row;
+  }
+
+  &:nth-child(even) {
     flex-direction: row-reverse;
   }
 }

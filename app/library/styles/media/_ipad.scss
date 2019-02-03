@@ -8,16 +8,16 @@
     width: 660px;
   }
 
+  &.landscape {
+    margin: 0 -75px;
+  }
+
   &.placeholder {
     &::after {
       content: '660 x 490';
       height: 490px;
       width: 660px;
     }
-  }
-
-  &.landscape {
-    margin: 0 -75px;
   }
 
   &.portrait {

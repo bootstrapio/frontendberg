@@ -8,6 +8,10 @@
     width: 650px;
   }
 
+  &.landscape {
+    margin: -50px 0px;
+  }
+
   &.placeholder {
     &::after {
       content: '(W) 650 x (H) 300';
@@ -19,6 +23,7 @@
   &.portrait {
     background-image: url('../media/images/iphone-space-gray-portrait.png');
     height: 750px;
+    margin: 0px -50px;
     width: 500px;
 
     img {
