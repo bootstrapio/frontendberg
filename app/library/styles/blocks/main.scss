@@ -1,3 +1,4 @@
+[class^='block-'], [class*=' block-'],
 [class^='intro-'], [class*=' intro-'],
 [class^='layout-'], [class*=' layout-'] {
   align-items: center;
@@ -19,6 +20,7 @@
 
 @import
   'intro-one',
+  'block-group',
   'layout-one',
   'layout-two',
   'layout-three';

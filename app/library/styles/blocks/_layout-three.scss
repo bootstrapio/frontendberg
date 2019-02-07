@@ -11,7 +11,7 @@
   &:nth-child(even) {
     flex-direction: row-reverse;
 
-    .block-media {
+    .group-media {
       direction: rtl;
     }
   }

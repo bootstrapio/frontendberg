@@ -49,6 +49,7 @@
 	</div>
 </section>
 
+
 <section>
 	<div class="bd-example-row">
 		<div class="bd-example">
@@ -72,7 +73,7 @@
 				</div>
 				<div class="row group-media">
 					<div class="col">
-						<figure class="media-image device-ipad landscape">
+						<figure class="media-image device-ipad portrait placeholder">
 							<img alt="" class="img-fluid" src="https://www.placehold.it/660x490">
 						</figure>
 					</div>
@@ -81,6 +82,7 @@
 		</div>
 	</div>
 </section>
+
 
 <section>
 	<div class="bd-example-row">
@@ -105,7 +107,7 @@
 				</div>
 				<div class="row group-media">
 					<div class="col">
-						<figure class="media-image device-ipad landscape">
+						<figure class="media-image device-ipad portrait placeholder">
 							<img alt="" class="img-fluid" src="https://www.placehold.it/660x490">
 						</figure>
 					</div>
@@ -131,7 +133,7 @@
 				</div>
 				<div class="row group-media">
 					<div class="col">
-						<figure class="media-image device-ipad portrait">
+						<figure class="media-image device-ipad portrait placeholder">
 							<img alt="" class="img-fluid" src="https://www.placehold.it/490x660">
 						</figure>
 					</div>
