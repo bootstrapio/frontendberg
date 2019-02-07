@@ -4,7 +4,20 @@
     margin-right: 0;
   }
 
+  .group-content {
+    .col {
+      flex: 0 0 33.3333%;
+
+      &:first-child:nth-last-child(1),
+      &:first-child:nth-last-child(2),
+      &:first-child:nth-last-child(2) ~ .col {
+        flex-grow: 1;
+      }
+    }
+  }
+
   .group-media {
+    align-items: center;
     flex-wrap: nowrap;
   }
 }

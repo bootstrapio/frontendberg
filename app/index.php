@@ -26,7 +26,7 @@
 					</figure>
 				</div>
 				<div class="col">
-					<figure class="media-image device-iphone landscape placeholder">
+					<figure class="media-image device-iphone portrait placeholder">
 						<img alt="" class="img-fluid" src="https://www.placehold.it/490x660">
 					</figure>
 				</div>

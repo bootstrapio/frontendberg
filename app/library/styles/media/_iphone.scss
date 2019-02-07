@@ -1,41 +1,41 @@
 .device-iphone {
   background-image: url('../media/images/iphone-space-gray.png');
-  height: 420px;
-  width: 625px;
+  height: 390px;
+  width: 590px;
 
   img {
-    height: 250px;
-    width: 550px;
+    height: 235px;
+    width: 510px;
   }
 
   &.landscape {
-    margin: -40px 0;
+    margin: -25px 0;
   }
 
   &.placeholder {
     &::after {
-      content: '(W) 550 x (H) 250';
-      height: 250px;
-      width: 550px;
+      content: '(W) 510 x (H) 235';
+      height: 235px;
+      width: 510px;
     }
   }
 
   &.portrait {
     background-image: url('../media/images/iphone-space-gray-portrait.png');
-    height: 625px;
-    margin: 0 -40px;
-    width: 420px;
+    height: 590px;
+    margin: 0 -25px;
+    width: 390px;
 
     img {
-      height: 550px;
-      width: 250px;
+      height: 510px;
+      width: 235px;
     }
 
     &.placeholder {
       &::after {
-        content: '(W) 250 x (H) 550';
-        height: 550px;
-        width: 250px;
+        content: '(W) 235 x (H) 510';
+        height: 510px;
+        width: 235px;
       }
     }
   }
