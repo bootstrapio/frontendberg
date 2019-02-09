@@ -1,0 +1,47 @@
+.banner-group {
+  padding: 0;
+
+  > .row {
+    > .col {
+      padding-bottom: 0;
+      padding-top: 0;
+
+      // 2 Column
+      &:first-child:nth-last-child(2),
+      &:first-child:nth-last-child(2) ~ .col {
+        color: red;
+
+        &:first-child {
+          padding-right: 0;
+          color: blue;
+        }
+
+        &:last-child {
+          padding-left: 0;
+          color: yellow;
+        }
+      }
+    }
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  .group-content {
+    .col {
+      // padding: 0;
+    }
+  }
+
+  .superscript {
+    align-items: flex-start;
+    flex-basis: 0;
+    flex-grow: 0;
+
+    h5 {
+      display: none;
+      visibility: hidden;
+    }
+  }
+}

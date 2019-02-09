@@ -1,3 +1,4 @@
+[class^='banner-'], [class*=' banner-'],
 [class^='block-'], [class*=' block-'],
 [class^='intro-'], [class*=' intro-'],
 [class^='layout-'], [class*=' layout-'] {
@@ -20,6 +21,7 @@
 
 @import
   'intro-one',
+  'banner-group',
   'block-group',
   'layout-one',
   'layout-two',
