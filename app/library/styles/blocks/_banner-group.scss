@@ -1,4 +1,5 @@
-.banner-group {
+[class^='banner-'], [class*=' banner-'] {
+  align-items: initial;
   padding: 0;
 
   > .row {
@@ -6,42 +7,98 @@
       padding-bottom: 0;
       padding-top: 0;
 
-      // 2 Column
-      &:first-child:nth-last-child(2),
-      &:first-child:nth-last-child(2) ~ .col {
-        color: red;
-
-        &:first-child {
-          padding-right: 0;
-          color: blue;
-        }
-
-        &:last-child {
-          padding-left: 0;
-          color: yellow;
+      // 1 Columns
+      &:first-child:last-child {
+        .superscript {
+          flex-basis: 0;
         }
       }
     }
   }
 
-  figure {
-    margin: 0;
+  &:nth-child(odd) {
+    > .row {
+      > .col {
+        // 2 Columns
+        &:first-child:nth-last-child(2),
+        &:first-child:nth-last-child(2) ~ .col {
+          &:first-child {
+            padding-right: 0;
+          }
+          &:last-child {
+            padding-left: 0;
+          }
+        }
+      }
+    }
   }
 
-  .group-content {
-    .col {
-      // padding: 0;
+  &:nth-child(even) {
+    > .row {
+      > .col {
+        // 2 Columns
+        &:first-child:nth-last-child(2),
+        &:first-child:nth-last-child(2) ~ .col {
+          &:first-child {
+            padding-left: 0;
+          }
+          &:last-child {
+            padding-right: 0;
+          }
+        }
+      }
+    }
+
+    .group-media {
+      direction: rtl;
     }
   }
 
   .superscript {
     align-items: flex-start;
-    flex-basis: 0;
     flex-grow: 0;
+
+    figure {
+      margin: 0;
+    }
 
     h5 {
       display: none;
       visibility: hidden;
     }
+  }
+}
+
+.banner-preview {
+  &:nth-child(odd) {
+    > .row {
+      flex-direction: row;
+    }
+  }
+
+  &:nth-child(even) {
+    > .row {
+      flex-direction: row-reverse;
+    }
+  }
+
+  > .row {
+    align-items: center;
+    flex-wrap: nowrap;
+
+    > .col {
+      flex: 0 0 50%;
+    }
+  }
+
+  .device-iphone {
+    &.portrait {
+      margin: 0 -10px;
+    }
+  }
+
+  .group-media {
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
   }
 }

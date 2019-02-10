@@ -1,15 +1,12 @@
 .device-iphone {
   background-image: url('../media/images/iphone-space-gray.png');
   height: 390px;
+  margin: -35px 0;
   width: 590px;
 
   img {
     height: 235px;
     width: 510px;
-  }
-
-  &.landscape {
-    margin: -35px 0;
   }
 
   &.placeholder {

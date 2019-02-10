@@ -1,15 +1,12 @@
 .device-ipad {
   background-image: url('../media/images/ipad-space-gray.png');
   height: 590px;
+  margin: 0 -85px;
   width: 920px;
 
   img {
     height: 490px;
     width: 660px;
-  }
-
-  &.landscape {
-    margin: 0 -85px;
   }
 
   &.placeholder {

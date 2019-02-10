@@ -120,7 +120,7 @@ gulp.task('scripts', () =>
       './node_modules/bootstrap/dist/js/bootstrap.bundle.js',
       './app/library/vendors/font-awesome/v5010.js',
       './app/library/scripts/main.js',
-      './app/library/scripts/media.js'
+      './app/library/scripts/blocks/banner-group.js'
     ])
       .pipe($.newer('.tmp/library/scripts'))
       .pipe($.sourcemaps.init())
@@ -141,7 +141,7 @@ gulp.task('admin-scripts', () =>
       './node_modules/bootstrap/dist/js/bootstrap.bundle.js',
       './app/library/vendors/font-awesome/v5010.js',
       './app/library/scripts/main.js',
-      './app/library/scripts/media.js'
+      './app/library/scripts/blocks/banner-group.js'
     ])
       .pipe($.newer('.tmp/library/scripts'))
       .pipe($.sourcemaps.init())
