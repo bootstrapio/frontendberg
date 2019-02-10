@@ -5,19 +5,6 @@
 <section>
 	<div class="bd-example-row">
 		<div class="bd-example">
-			<div class="container intro-one">
-				<div class="row group-content">
-					<div class="col">
-						<h2>You have a great touch for making movies.</h2>
-					</div>
-					<div class="col">
-						<div>
-							<p>iMovie is even easier to use with the new MacBook Pro, featuring the revolutionary Touch Bar. The most useful commands automatically appear on the keyboard, right where you need them. And MacBook Pro easily powers through demanding 4K video projects so you can edit and export in record time.</p>
-							<a href="#" class="">Intro One</a>
-						</div>
-					</div>
-				</div>
-			</div>
 			<div class="container block-group">
 			<div class="row group-media">
 				<div class="col">
@@ -34,7 +21,7 @@
 				<div class="row group-content">
 					<div class="col">
 						<div>
-							<h6>iMovie on MacBook Pro</h6>
+							<h5>iMovie on MacBook Pro</h5>
 							<p>iMovie is even easier to use with the new MacBook Pro, featuring the revolutionary Touch Bar. The most useful commands automatically appear on the keyboard, right where you need them. And MacBook Pro easily powers through demanding 4K video projects so you can edit and export in record time.</p>
 							<a href="#" class="">Block One</a>
 						</div>
@@ -46,14 +33,14 @@
 				<div class="row group-content">
 					<div class="col">
 						<div>
-							<h6>iMovie on MacBook Pro</h6>
+							<h5>iMovie on MacBook Pro</h5>
 							<p>iMovie is even easier to use with the new MacBook Pro, featuring the revolutionary Touch Bar. The most useful commands automatically appear on the keyboard, right where you need them. And MacBook Pro easily powers through demanding 4K video projects so you can edit and export in record time.</p>
 							<a href="#" class="">Layout One</a>
 						</div>
 					</div>
 					<div class="col">
 						<div>
-							<h6>iMovie on MacBook Pro</h6>
+							<h5>iMovie on MacBook Pro</h5>
 							<p>iMovie is even easier to use with the new MacBook Pro, featuring the revolutionary Touch Bar. The most useful commands automatically appear on the keyboard, right where you need them. And MacBook Pro easily powers through demanding 4K video projects so you can edit and export in record time.</p>
 							<a href="#" class="">Layout One</a>
 						</div>
@@ -65,21 +52,21 @@
 				<div class="row group-content">
 					<div class="col">
 						<div>
-							<h6>iMovie on MacBook Pro</h6>
+							<h5>iMovie on MacBook Pro</h5>
 							<p>iMovie is even easier to use with the new MacBook Pro, featuring the revolutionary Touch Bar. The most useful commands automatically appear on the keyboard, right where you need them. And MacBook Pro easily powers through demanding 4K video projects so you can edit and export in record time.</p>
 							<a href="#" class="">Layout One</a>
 						</div>
 					</div>
 					<div class="col">
 						<div>
-							<h6>iMovie on MacBook Pro</h6>
+							<h5>iMovie on MacBook Pro</h5>
 							<p>iMovie is even easier to use with the new MacBook Pro, featuring the revolutionary Touch Bar. The most useful commands automatically appear on the keyboard, right where you need them. And MacBook Pro easily powers through demanding 4K video projects so you can edit and export in record time.</p>
 							<a href="#" class="">Layout One</a>
 						</div>
 					</div>
 					<div class="col">
 						<div>
-							<h6>iMovie on MacBook Pro</h6>
+							<h5>iMovie on MacBook Pro</h5>
 							<p>iMovie is even easier to use with the new MacBook Pro, featuring the revolutionary Touch Bar. The most useful commands automatically appear on the keyboard, right where you need them. And MacBook Pro easily powers through demanding 4K video projects so you can edit and export in record time.</p>
 							<a href="#" class="">Layout One</a>
 						</div>
