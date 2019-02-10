@@ -13,44 +13,18 @@
           flex-basis: 0;
         }
       }
-    }
-  }
 
-  &:nth-child(odd) {
-    > .row {
-      > .col {
-        // 2 Columns
-        &:first-child:nth-last-child(2),
-        &:first-child:nth-last-child(2) ~ .col {
-          &:first-child {
-            padding-right: 0;
-          }
-          &:last-child {
-            padding-left: 0;
-          }
+      // 2 Columns
+      &:first-child:nth-last-child(2),
+      &:first-child:nth-last-child(2) ~ .col {
+        &:first-child {
+          border-right: 1px solid #CCC;
+          padding-right: 0;
+        }
+        &:last-child {
+          padding-left: 0;
         }
       }
-    }
-  }
-
-  &:nth-child(even) {
-    > .row {
-      > .col {
-        // 2 Columns
-        &:first-child:nth-last-child(2),
-        &:first-child:nth-last-child(2) ~ .col {
-          &:first-child {
-            padding-left: 0;
-          }
-          &:last-child {
-            padding-right: 0;
-          }
-        }
-      }
-    }
-
-    .group-media {
-      direction: rtl;
     }
   }
 
@@ -70,24 +44,45 @@
 }
 
 .banner-preview {
-  &:nth-child(odd) {
-    > .row {
-      flex-direction: row;
-    }
-  }
-
-  &:nth-child(even) {
-    > .row {
-      flex-direction: row-reverse;
-    }
-  }
-
   > .row {
     align-items: center;
     flex-wrap: nowrap;
 
     > .col {
       flex: 0 0 50%;
+
+      // 2 Columns
+      &:first-child:nth-last-child(2),
+      &:first-child:nth-last-child(2) ~ .col {
+        &:first-child {
+          border-right: none;
+        }
+      }
+    }
+  }
+
+  &:nth-child(even) {
+    > .row {
+      flex-direction: row-reverse;
+
+      > .col {
+        // 2 Columns
+        &:first-child:nth-last-child(2),
+        &:first-child:nth-last-child(2) ~ .col {
+          &:first-child {
+            padding-left: 0;
+            padding-right: 15px;
+          }
+          &:last-child {
+            padding-left: 15px;
+            padding-right: 0;
+          }
+        }
+      }
+    }
+
+    .group-media {
+      direction: rtl;
     }
   }
 
