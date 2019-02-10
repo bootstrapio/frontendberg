@@ -1,0 +1,55 @@
+header {
+  > section {
+    background: linear-gradient(to bottom, #fff 0%, #fff 50%, #fafafa 100%);
+
+    // .container {
+    //   max-width: 912px;
+    // }
+  }
+}
+
+[class^='hero-'], [class*=' hero-'] {
+  .row {
+    flex-direction: column;
+  }
+
+  .superscript {
+    .media-icon {
+      height: 80px;
+      min-width: 80px;
+
+      img {
+        height: 80px;
+      }
+
+      &.placeholder {
+        &::after {
+          height: 80px;
+          width: 80px;
+        }
+      }
+    }
+  }
+}
+
+.hero-one {
+  text-align: center;
+
+  .superscript {
+    flex-direction: column;
+    justify-content: center;
+
+    .media-icon {
+      margin: 0 0 16px;
+    }
+  }
+}
+
+.hero-two {
+  flex-direction: row;
+
+  .row {
+    flex: 0 0 50%;
+    flex-direction: column;
+  }
+}

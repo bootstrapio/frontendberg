@@ -20,7 +20,8 @@
   &.portrait {
     background-image: url('../media/images/iphone-space-gray-portrait.png');
     height: 590px;
-    margin: 0 -35px;
+    // margin: 0 -35px;
+    margin: 0 auto;
     width: 390px;
 
     img {

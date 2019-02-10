@@ -1,13 +1,12 @@
 [class^='banner-'], [class*=' banner-'],
 [class^='block-'], [class*=' block-'],
+[class^='hero-'], [class*=' hero-'],
 [class^='intro-'], [class*=' intro-'],
 [class^='layout-'], [class*=' layout-'] {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-
-  background: pink;
 
   .col {
     z-index: 1;
@@ -20,9 +19,10 @@
 }
 
 @import
-  'intro-one',
   'banner-group',
   'block-group',
+  'hero-group',
+  'intro-one',
   'layout-one',
   'layout-two',
   'layout-three';

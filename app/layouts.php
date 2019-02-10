@@ -1,8 +1,6 @@
 <?php get_header(); ?>
 
 <main>
-
-
 <section>
 	<div class="bd-example-row">
 		<div class="bd-example">
