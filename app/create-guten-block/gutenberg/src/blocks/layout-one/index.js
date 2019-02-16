@@ -6,6 +6,7 @@ import classnames from 'classnames';
 /** WordPress dependencies ()*/
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
+const { Fragment} = wp.element;
 const { InspectorControls, MediaUpload, RichText } = wp.editor;
 
 /** Internal dependencies **/
@@ -13,6 +14,7 @@ import LayoutInspector, { LayoutInspectorAttributes, LayoutInspectorClasses } fr
 import Superscript, { SuperscriptAttributes, SuperscriptClasses, SuperscriptFrontend } from '../../components/superscript';
 import SuperscriptInspector, { SuperscriptInspectorAttributes, SuperscriptInspectorClasses } from '../../components/superscript-inspector';
 import Content, { ContentAttributes, ContentClasses, ContentFrontend } from '../../components/content';
+import ContentH3, { ContentH3Attributes, ContentH3Classes, ContentH3Frontend } from '../../components/content-h3';
 import ContentInspector, { ContentInspectorAttributes, ContentInspectorClasses } from '../../components/content-inspector';
 
 /** Register Block Type **/
@@ -53,7 +55,10 @@ export default registerBlockType( 'frontendberg/layout-one', {
 						<Superscript { ...props } />
 					)}
 					{( props.attributes.displayContent === false ? '' :
-						<Content { ...props } />
+						<Fragment>
+							<ContentH3 { ...props } />
+							<Content { ...props } />
+						</Fragment>
 					)}
 				</div>
 			</div>
@@ -69,7 +74,10 @@ export default registerBlockType( 'frontendberg/layout-one', {
 						<SuperscriptFrontend { ...props } />
 					)}
 					{( props.attributes.displayContent === false ? '' :
-						<ContentFrontend { ...props } />
+						<Fragment>
+							<ContentH3Frontend { ...props } />
+							<ContentFrontend { ...props } />
+						</Fragment>
 					)}
 				</div>
 			</div>

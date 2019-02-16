@@ -13,6 +13,20 @@ function ContentInspector( props ) {
 
 	} else {
 
+		// Content Headline
+		const DisplayContentHeadline = () => {
+			return (
+				<ToggleControl
+					label = { 'Headline' }
+					checked  = { props.attributes.contentDisplayHeadline }
+					onChange = { onChangeContentDisplayHeadline }
+				/>
+			);
+		};
+		const onChangeContentDisplayHeadline = value => {
+			props.setAttributes( { contentDisplayHeadline: value } );
+		};
+
 		// Content Paragraph
 		const DisplayContentParagraph = () => {
 			return (
@@ -48,6 +62,7 @@ function ContentInspector( props ) {
 				title = { 'Content' }
 			>
 				<PanelRow>
+					{ DisplayContentHeadline() }
 					{ DisplayContentParagraph() }
 					{ DisplayContentLink() }
 				</PanelRow>

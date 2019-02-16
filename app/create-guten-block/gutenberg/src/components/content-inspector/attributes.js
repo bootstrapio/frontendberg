@@ -1,5 +1,5 @@
 const ContentInspectorAttributes = {
-	contentDisplayParagraph: {
+	contentDisplayHeadline: {
 		default: true,
 		type: 'boolean'
 	},
@@ -10,6 +10,10 @@ const ContentInspectorAttributes = {
 	contentLinkType: {
 		default: 'default',
 		type: 'string'
+	},
+	contentDisplayParagraph: {
+		default: true,
+		type: 'boolean'
 	}
 };
 
