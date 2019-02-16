@@ -10,7 +10,11 @@ const LayoutInspectorAttributes = {
 	displayMedia: {
 		default: true,
 		type: 'boolean'
-	}
+	},
+	layoutStyle: {
+		default: 'layout-one',
+		type: 'string'
+	},
 };
 
 export default LayoutInspectorAttributes;

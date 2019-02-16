@@ -10,4 +10,4 @@
  */
 
 import './blocks/default';
-import './blocks/layout-one';
+import './blocks/layout';

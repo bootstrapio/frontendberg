@@ -20,8 +20,8 @@ import Media, { MediaAttributes, MediaClasses, MediaFrontend } from '../../compo
 import MediaInspector, { MediaInspectorAttributes, MediaInspectorClasses } from '../../components/media-inspector';
 
 /** Register Block Type **/
-export default registerBlockType( 'frontendberg/layout-one', {
-	title: 'Layout One',
+export default registerBlockType( 'frontendberg/layout', {
+	title: 'Layout',
 	category: 'frontendberg-layouts',
 	icon: 'sos',
 	attributes: {

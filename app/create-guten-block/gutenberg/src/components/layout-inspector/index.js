@@ -1,6 +1,6 @@
 const { __ } = wp.i18n;
 const { } = wp.editor;
-const { PanelBody, PanelRow, ToggleControl } = wp.components;
+const { PanelBody, PanelRow, SelectControl, ToggleControl } = wp.components;
 
 import LayoutInspectorAttributes from './attributes';
 import LayoutInspectorClasses from './classes';
@@ -50,16 +50,36 @@ function LayoutInspector( props ) {
 	  props.setAttributes( { displayMedia: value } );
 	};
 
+	// Layout Type
+	const LayoutStyle = () => {
+		return (
+			<SelectControl
+				label = 'Layout Style'
+				onChange = { onChangeLayoutStyle }
+				options = {[
+					{ label: 'One', value: 'layout-one' },
+					{ label: 'Two', value: 'layout-two' },
+					{ label: 'Three', value: 'layout-three' }
+				]}
+				value = { props.attributes.layoutStyle }
+			/>
+		);
+	};
+	const onChangeLayoutStyle = value => {
+		props.setAttributes( { layoutStyle: value } );
+	};
+
 	// Inspector Display for Superscript Settings
 	return (
 		<PanelBody
 			initialOpen = { true }
-			title = { 'Components' }
+			title = { 'Settings' }
 		>
 			<PanelRow>
 				{ DisplaySuperscript() }
 				{ DisplayContent() }
 				{ DisplayMedia() }
+				{ LayoutStyle() }
 			</PanelRow>
 		</PanelBody>
 	);
