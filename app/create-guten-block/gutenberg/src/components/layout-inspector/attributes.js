@@ -1,9 +1,9 @@
 const LayoutInspectorAttributes = {
 	displaySuperscript: {
-		default: false,
+		default: true,
 		type: 'boolean'
 	},
-	contentDisplay: {
+	displayContent: {
 		default: true,
 		type: 'boolean'
 	},

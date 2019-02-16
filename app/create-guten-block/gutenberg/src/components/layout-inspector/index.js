@@ -27,13 +27,13 @@ function LayoutInspector( props ) {
 	  return (
 	    <ToggleControl
 	      label = { 'Content' }
-	      checked  = { props.attributes.contentDisplay }
+	      checked  = { props.attributes.displayContent }
 	      onChange = { onChangeContentDisplay }
 	    />
 	  );
 	};
 	const onChangeContentDisplay = value => {
-	  props.setAttributes( { contentDisplay: value } );
+	  props.setAttributes( { displayContent: value } );
 	};
 
 	// Media

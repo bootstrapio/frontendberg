@@ -12,6 +12,8 @@ const { InspectorControls, MediaUpload, RichText } = wp.editor;
 import LayoutInspector, { LayoutInspectorAttributes, LayoutInspectorClasses } from '../../components/layout-inspector';
 import Superscript, { SuperscriptAttributes, SuperscriptClasses, SuperscriptFrontend } from '../../components/superscript';
 import SuperscriptInspector, { SuperscriptInspectorAttributes, SuperscriptInspectorClasses } from '../../components/superscript-inspector';
+import Content, { ContentAttributes, ContentClasses, ContentFrontend } from '../../components/content';
+import ContentInspector, { ContentInspectorAttributes, ContentInspectorClasses } from '../../components/content-inspector';
 
 /** Register Block Type **/
 export default registerBlockType( 'frontendberg/layout-one', {
@@ -26,6 +28,7 @@ export default registerBlockType( 'frontendberg/layout-one', {
 		},
 		...LayoutInspectorAttributes,
 		...SuperscriptInspectorAttributes,
+		...ContentInspectorAttributes,
 	},
 
 	// Gutenberg
@@ -40,6 +43,7 @@ export default registerBlockType( 'frontendberg/layout-one', {
 				<InspectorControls key='inspector'>
 					{ LayoutInspector( props ) }
 					{ SuperscriptInspector( props ) }
+					{ ContentInspector( props ) }
 				</InspectorControls>
 			),
 
@@ -47,6 +51,9 @@ export default registerBlockType( 'frontendberg/layout-one', {
 				<div class='row group-content'>
 					{( props.attributes.displaySuperscript === false ? '' :
 						<Superscript { ...props } />
+					)}
+					{( props.attributes.displayContent === false ? '' :
+						<Content { ...props } />
 					)}
 				</div>
 			</div>
@@ -60,6 +67,9 @@ export default registerBlockType( 'frontendberg/layout-one', {
 				<div class='row group-content'>
 					{( props.attributes.displaySuperscript === false ? '' :
 						<SuperscriptFrontend { ...props } />
+					)}
+					{( props.attributes.displayContent === false ? '' :
+						<ContentFrontend { ...props } />
 					)}
 				</div>
 			</div>
