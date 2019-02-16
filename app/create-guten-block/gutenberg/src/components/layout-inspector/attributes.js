@@ -7,7 +7,7 @@ const LayoutInspectorAttributes = {
 		default: true,
 		type: 'boolean'
 	},
-	mediaDisplay: {
+	displayMedia: {
 		default: true,
 		type: 'boolean'
 	}

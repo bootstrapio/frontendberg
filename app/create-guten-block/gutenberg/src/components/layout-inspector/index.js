@@ -41,13 +41,13 @@ function LayoutInspector( props ) {
 	  return (
 	    <ToggleControl
 	      label = { 'Media' }
-	      checked  = { props.attributes.mediaDisplay }
+	      checked  = { props.attributes.displayMedia }
 	      onChange = { onChangeMediaDisplay }
 	    />
 	  );
 	};
 	const onChangeMediaDisplay = value => {
-	  props.setAttributes( { mediaDisplay: value } );
+	  props.setAttributes( { displayMedia: value } );
 	};
 
 	// Inspector Display for Superscript Settings

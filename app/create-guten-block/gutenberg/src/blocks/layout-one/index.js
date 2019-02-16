@@ -16,6 +16,8 @@ import SuperscriptInspector, { SuperscriptInspectorAttributes, SuperscriptInspec
 import Content, { ContentAttributes, ContentClasses, ContentFrontend } from '../../components/content';
 import ContentH3, { ContentH3Attributes, ContentH3Classes, ContentH3Frontend } from '../../components/content-h3';
 import ContentInspector, { ContentInspectorAttributes, ContentInspectorClasses } from '../../components/content-inspector';
+import Media, { MediaAttributes, MediaClasses, MediaFrontend } from '../../components/media';
+import MediaInspector, { MediaInspectorAttributes, MediaInspectorClasses } from '../../components/media-inspector';
 
 /** Register Block Type **/
 export default registerBlockType( 'frontendberg/layout-one', {
@@ -31,6 +33,7 @@ export default registerBlockType( 'frontendberg/layout-one', {
 		...LayoutInspectorAttributes,
 		...SuperscriptInspectorAttributes,
 		...ContentInspectorAttributes,
+		...MediaInspectorAttributes,
 	},
 
 	// Gutenberg
@@ -46,6 +49,7 @@ export default registerBlockType( 'frontendberg/layout-one', {
 					{ LayoutInspector( props ) }
 					{ SuperscriptInspector( props ) }
 					{ ContentInspector( props ) }
+					{ MediaInspector( props ) }
 				</InspectorControls>
 			),
 
@@ -59,6 +63,9 @@ export default registerBlockType( 'frontendberg/layout-one', {
 							<ContentH3 { ...props } />
 							<Content { ...props } />
 						</Fragment>
+					)}
+					{( props.attributes.displayMedia === false ? '' :
+						<Media { ...props } />
 					)}
 				</div>
 			</div>
@@ -78,6 +85,9 @@ export default registerBlockType( 'frontendberg/layout-one', {
 							<ContentH3Frontend { ...props } />
 							<ContentFrontend { ...props } />
 						</Fragment>
+					)}
+					{( props.attributes.displayMedia === false ? '' :
+						<MediaFrontend { ...props } />
 					)}
 				</div>
 			</div>
