@@ -1,6 +1,7 @@
 function SuperscriptInspectorClasses( props ) {
 	return [
-		{ 'false' : 'false' === props.attributes.superscriptDisplayIcon }
+		{ 'hidden' : false === props.attributes.superscriptDisplayIcon },
+		{ 'hidden': false === props.attributes.superscriptDisplayTitle }
 	];
 }
 

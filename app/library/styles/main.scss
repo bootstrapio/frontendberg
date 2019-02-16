@@ -5,8 +5,13 @@
 .editor-block-list__layout {
   @import
     'wireframe/main',
-    'gutenberg/main',
+    'frontend/main',
     'media/main',
     'blocks/main',
     'components/main';
+}
+
+.block-editor {
+  @import
+    'gutenberg/main';
 }

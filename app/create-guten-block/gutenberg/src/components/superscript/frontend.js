@@ -1,18 +1,18 @@
 export const SuperscriptFrontend = ( props ) => {
-	if ( ! props.attributes.superscriptDisplay ) {
+	if ( ! props.attributes.displaySuperscript ) {
 		return null;
 	}
 
 	return (
-		<h4 className = 'superscript'>
+		<div class='col superscript'>
 			{ props.attributes.superscriptDisplayIcon && (
-				<figure className = {'media-icon ' + ( ! props.attributes.superscriptIconURL ? ' placeholder' : '')}>
-					<img alt={ props.attributes.superscriptIconAlt } class="img-fluid" src={ props.attributes.superscriptIconURL } />
+				<figure className = {'block-media media-icon ' + ( ! props.attributes.superscriptImageURL ? ' placeholder' : '')}>
+					<img alt={ props.attributes.superscriptImageAlt } class="img-fluid" src={ props.attributes.superscriptImageURL } />
 				</figure>
 			) }
 			{ props.attributes.superscriptDisplayTitle && (
-				<span>{ props.attributes.superscriptTitle }</span>
+				<h5>{ props.attributes.superscriptTitle }</h5>
 			) }
-		</h4>
+		</div>
 	);
 };

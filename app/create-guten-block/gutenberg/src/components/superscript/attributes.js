@@ -1,12 +1,12 @@
 export const SuperscriptAttributes = {
 	superscriptIconAlt: {
 		attribute: 'alt',
-		selector: '.media-icon img',
+		selector: 'img',
 		source: 'attribute',
 		type: 'string'
 	},
 	superscriptIconURL: {
-		selector: '.media-icon img',
+		selector: 'img',
 		attribute: 'src',
 		source: 'attribute',
 		type: 'string',

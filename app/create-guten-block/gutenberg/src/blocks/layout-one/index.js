@@ -1,7 +1,6 @@
 /** BLOCK: Layout One **/
 
 /** External dependencies **/
-// Import NPM libraries here.
 import classnames from 'classnames';
 
 /** WordPress dependencies ()*/
@@ -10,11 +9,12 @@ const { registerBlockType } = wp.blocks;
 const { InspectorControls, MediaUpload, RichText } = wp.editor;
 
 /** Internal dependencies **/
-import Superscript, { SuperscriptAttributes, SuperscriptFrontend } from '../../components/superscript';
+import LayoutInspector, { LayoutInspectorAttributes, LayoutInspectorClasses } from '../../components/layout-inspector';
+import Superscript, { SuperscriptAttributes, SuperscriptClasses, SuperscriptFrontend } from '../../components/superscript';
 import SuperscriptInspector, { SuperscriptInspectorAttributes, SuperscriptInspectorClasses } from '../../components/superscript-inspector';
 
 /** Register Block Type **/
-export default registerBlockType( 'frontendberg/layout-one', { // Namespaced with 'wds/', lowercase, hyphenated.
+export default registerBlockType( 'frontendberg/layout-one', {
 	title: 'Layout One',
 	category: 'frontendberg-layouts',
 	icon: 'sos',
@@ -24,11 +24,11 @@ export default registerBlockType( 'frontendberg/layout-one', { // Namespaced wit
 			source: 'children',
 			selector: '.content-block',
 		},
-		...SuperscriptAttributes,
+		...LayoutInspectorAttributes,
 		...SuperscriptInspectorAttributes,
 	},
 
-	// Displays | Gutenberg Editor
+	// Gutenberg
 	edit: props => {
 		// Event handler to update the value of the content when changed in editor.
 		const setMessageAttribute = value => {
@@ -37,39 +37,30 @@ export default registerBlockType( 'frontendberg/layout-one', { // Namespaced wit
 
 		return [
 			!! props.isSelected && (
-				<InspectorControls key="inspector">
+				<InspectorControls key='inspector'>
+					{ LayoutInspector( props ) }
 					{ SuperscriptInspector( props ) }
 				</InspectorControls>
 			),
 
-			<div className ='layout-one'>
-				<div className ='container'>
-				{(
-					props.attributes.superscriptDisplay === false ? '' :
-					<div className = 'row'>
-						<div className = 'col-12'>
-							<Superscript { ...props } />
-						</div>
-					</div>
-				)}
+			<div class='container layout-one'>
+				<div class='row group-content'>
+					{( props.attributes.displaySuperscript === false ? '' :
+						<Superscript { ...props } />
+					)}
 				</div>
 			</div>
 		];
 	},
 
-	// Displays | Frontend
+	// Frontend
 	save: props => {
 		return (
-			<div className ='layout-one'>
-				<div className ='container'>
-				{(
-					props.attributes.superscriptDisplay === false ? '' :
-					<div className = 'row'>
-						<div className = 'col-12'>
-							<SuperscriptFrontend { ...props } />
-						</div>
-					</div>
-				)}
+			<div class='container layout-one'>
+				<div class='row group-content'>
+					{( props.attributes.displaySuperscript === false ? '' :
+						<SuperscriptFrontend { ...props } />
+					)}
 				</div>
 			</div>
 		);

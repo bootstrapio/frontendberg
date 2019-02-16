@@ -15,6 +15,7 @@ const { PlainText, MediaUpload } = wp.editor;
 const { Button } = wp.components;
 
 export default class Superscript extends Component {
+	// Superscript Title
 	onChangeSuperscriptTitle = value => {
 		const { setAttributes } = this.props;
 		setAttributes( {
@@ -22,6 +23,7 @@ export default class Superscript extends Component {
 		} );
 	};
 
+	// Superscript Icon | Remove
 	onClickRemoveSuperscriptIcon = () => {
 		const { setAttributes } = this.props;
 		setAttributes( {
@@ -30,6 +32,7 @@ export default class Superscript extends Component {
 		} );
 	};
 
+	// Superscript Icon | Add
 	onSelectSuperscriptIcon = media => {
 		const { setAttributes } = this.props;
 		setAttributes( {
@@ -39,19 +42,21 @@ export default class Superscript extends Component {
 	};
 
 	render() {
-		if ( ! this.props.attributes.superscriptDisplay ) {
+		if ( ! this.props.attributes.displaySuperscript ) {
 			return null;
 		}
 
 		return (
-			<h4 className = 'superscript'>
-				{ this.props.attributes.superscriptDisplayIcon && (
-				<figure className = {'media-icon ' + ( ! this.props.attributes.superscriptIconURL ? ' placeholder' : '')}>
-					{ ! this.props.attributes.superscriptIconURL ? (
+			<div class='col superscript'>
+
+			{ this.props.attributes.superscriptDisplayIcon && (
+				<figure className = {'block-media media-icon ' + ( ! this.props.attributes.superscriptImageURL ? ' placeholder' : '')}>
+					{ ! this.props.attributes.superscriptImageURL ? (
+						/* <MediaUploadCheck> */
 						<MediaUpload
-							onSelect = { this.onSelectSuperscriptIcon }
+							onSelect = { this.onSelectSuperscriptImage }
 							type = 'image'
-							value = {this.props.attributes.superscriptIconURL}
+							value = {this.props.attributes.superscriptImageURL}
 							render = { ( { open } ) => (
 								<div class="gutenberg-update-item">
 									<span className="add"><i className="fas fa-plus-circle"></i></span>
@@ -59,26 +64,26 @@ export default class Superscript extends Component {
 								</div>
 							) }
 						/>
+						/* </MediaUploadCheck> */
 					) : (
 						<div class="gutenberg-update-item">
-							{ this.props.isSelected ? (
-								<span className="remove" onClick={ this.onClickRemoveSuperscriptIcon }><i className="fas fa-minus-circle"></i></span>
-							) : null }
-							<img alt={ this.props.attributes.superscriptIconAlt } class="img-fluid" src={ this.props.attributes.superscriptIconURL } />
+							{ this.props.isSelected ? (<span className="remove" onClick={ this.onClickRemoveSuperscriptImage }><i className="fas fa-minus-circle"></i></span>) : null }
+							<img alt={ this.props.attributes.superscriptImageAlt } class="img-fluid" src={ this.props.attributes.superscriptImageURL } />
 						</div>
 					)}
 				</figure>
 				) }
 				{ this.props.attributes.superscriptDisplayTitle && (
 					<PlainText
-						tagName = 'span'
+						tagName = 'h5'
+						className= 'h5'
 						keepPlaceholderOnFocus = { true }
 						onChange = { this.onChangeSuperscriptTitle }
 						placeholder = { 'Sed Do Eiusmod' }
 						value = { this.props.attributes.superscriptTitle }
 					/>
 				) }
-			</h4>
+			</div>
 		);
 	}
 }
