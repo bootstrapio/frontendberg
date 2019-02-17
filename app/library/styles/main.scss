@@ -1,6 +1,15 @@
 @import
   '../../../node_modules/bootstrap/scss/bootstrap';
 
+$fontfamily: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
+
+*:focus,
+textarea:focus,
+input:focus{
+  outline: 0 !important;
+  outline: none !important;
+}
+
 .frontendberg,
 .editor-block-list__layout {
   @import
@@ -13,5 +22,6 @@
 
 .block-editor {
   @import
-    'gutenberg/main';
+  '../../../node_modules/bootstrap/scss/type.scss',
+  'gutenberg/main';
 }

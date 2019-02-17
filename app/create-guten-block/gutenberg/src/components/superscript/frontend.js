@@ -6,7 +6,7 @@ export const SuperscriptFrontend = ( props ) => {
 	return (
 		<div class='col superscript'>
 			{ props.attributes.superscriptDisplayIcon && (
-				<figure className = {'block-media media-icon ' + ( ! props.attributes.superscriptImageURL ? ' placeholder' : '')}>
+				<figure className = {'group-media media-icon ' + ( ! props.attributes.superscriptImageURL ? ' placeholder' : '')}>
 					<img alt={ props.attributes.superscriptImageAlt } class="img-fluid" src={ props.attributes.superscriptImageURL } />
 				</figure>
 			) }

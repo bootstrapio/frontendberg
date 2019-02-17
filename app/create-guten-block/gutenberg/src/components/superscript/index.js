@@ -50,7 +50,7 @@ export default class Superscript extends Component {
 			<div class='col superscript'>
 
 			{ this.props.attributes.superscriptDisplayIcon && (
-				<figure className = {'block-media media-icon ' + ( ! this.props.attributes.superscriptImageURL ? ' placeholder' : '')}>
+				<figure className = {'group-media media-icon ' + ( ! this.props.attributes.superscriptImageURL ? ' placeholder' : '')}>
 					{ ! this.props.attributes.superscriptImageURL ? (
 						/* <MediaUploadCheck> */
 						<MediaUpload

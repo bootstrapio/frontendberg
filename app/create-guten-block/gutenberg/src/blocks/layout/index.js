@@ -52,7 +52,8 @@ export default registerBlockType( 'frontendberg/layout', {
 					{ MediaInspector( props ) }
 				</InspectorControls>
 			),
-
+<div class="bd-example-row">
+<div class="bd-example">
 			<div class='container layout-one'>
 				<div class='row group-content'>
 					{( props.attributes.displaySuperscript === false ? '' :
@@ -64,11 +65,15 @@ export default registerBlockType( 'frontendberg/layout', {
 							<Content { ...props } />
 						</Fragment>
 					)}
-					{( props.attributes.displayMedia === false ? '' :
-						<Media { ...props } />
-					)}
 				</div>
+				{( props.attributes.displayMedia === false ? '' :
+					<div class="row group-media">
+						<Media { ...props } />
+					</div>
+				)}
 			</div>
+</div>
+</div>
 		];
 	},
 
@@ -86,10 +91,12 @@ export default registerBlockType( 'frontendberg/layout', {
 							<ContentFrontend { ...props } />
 						</Fragment>
 					)}
-					{( props.attributes.displayMedia === false ? '' :
-						<MediaFrontend { ...props } />
-					)}
 				</div>
+				{( props.attributes.displayMedia === false ? '' :
+					<div class="row group-media">
+						<MediaFrontend { ...props } />
+					</div>
+				)}
 			</div>
 		);
 	}

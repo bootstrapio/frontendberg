@@ -28,14 +28,16 @@ export default class ContentH3 extends Component {
 		}
 
 		return (
-			<h3>
-				<PlainText
-					keepPlaceholderOnFocus = { true }
-					onChange = { this.onChangeContentH3 }
-					placeholder = { 'Et dolore magna aliqua' }
-					value = { this.props.attributes.contentH3 }
-				/>
-			</h3>
+			<div class="col">
+				<h3>
+					<PlainText
+						keepPlaceholderOnFocus = { true }
+						onChange = { this.onChangeContentH3 }
+						placeholder = { 'Et dolore magna aliqua' }
+						value = { this.props.attributes.contentH3 }
+					/>
+				</h3>
+			</div>
 		);
 	}
 }
