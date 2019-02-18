@@ -1,3 +1,6 @@
+$iphone-height: 235px;
+$iphone-width: 510px;
+
 .device-iphone {
   background-image: url('../media/images/iphone-space-gray.png');
   height: 390px;
@@ -5,15 +8,22 @@
   width: 590px;
 
   img {
-    height: 235px;
-    width: 510px;
+    height: $iphone-height;
+    width: $iphone-width;
+  }
+
+  .gutenberg-update-item {
+    button {
+      height: $iphone-height;
+      width: $iphone-width;
+    }
   }
 
   &.placeholder {
     &::after {
       content: '(W) 510 x (H) 235';
-      height: 235px;
-      width: 510px;
+      height: $iphone-height;
+      width: $iphone-width;
     }
   }
 
@@ -25,15 +35,22 @@
     width: 390px;
 
     img {
-      height: 510px;
-      width: 235px;
+      height: $iphone-width;
+      width: $iphone-height;
     }
 
     &.placeholder {
       &::after {
         content: '(W) 235 x (H) 510';
-        height: 510px;
-        width: 235px;
+        height: $iphone-width;
+        width: $iphone-height;
+      }
+    }
+
+    .gutenberg-update-item {
+      button {
+        height: $iphone-width;
+        width: $iphone-height;
       }
     }
   }

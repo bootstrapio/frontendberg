@@ -54,7 +54,11 @@ export default registerBlockType( 'frontendberg/layout', {
 			),
 <div class="bd-example-row">
 <div class="bd-example">
-			<div class='container layout-one'>
+			<div
+				className={
+					'container ' + ( props.attributes.layoutStyle )
+				}
+			>
 				<div class='row group-content'>
 					{( props.attributes.displaySuperscript === false ? '' :
 						<Superscript { ...props } />

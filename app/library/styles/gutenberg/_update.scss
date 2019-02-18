@@ -1,13 +1,23 @@
 .gutenberg-update-item {
+  position: absolute;
+
+  button {
+    &, &:focus, &:hover {
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+    }
+  }
+
   span {
     color: #999;
     cursor: pointer;
-    display: block;
-    font-size: 18px;
-    line-height: 22px !important;
-    margin: 0;
+    font-size: 16px;
+    left: -20px;
+    line-height: 16px;
     opacity: .48;
     position: absolute;
+    top: -20px;
 
     &:hover {
       opacity: 1;
@@ -34,14 +44,14 @@
 }
 
 // app/library/styles/components/_superscript.scss
-.superscript {
-  .gutenberg-update-item {
-    span {
-      left: -24px;
-    }
-
-    .add {
-      display: none;
-    }
-  }
-}
+// .superscript {
+//   .gutenberg-update-item {
+//     span {
+//       left: -24px;
+//     }
+//
+//     .add {
+//       display: none;
+//     }
+//   }
+// }

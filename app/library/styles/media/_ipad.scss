@@ -1,3 +1,6 @@
+$ipad-height: 490px;
+$ipad-width: 660px;
+
 .device-ipad {
   background-image: url('../media/images/ipad-space-gray.png');
   height: 590px;
@@ -5,15 +8,22 @@
   width: 920px;
 
   img {
-    height: 490px;
-    width: 660px;
+    height: $ipad-height;
+    width: $ipad-width;
+  }
+
+  .gutenberg-update-item {
+    button {
+      height: $ipad-height;
+      width: $ipad-width;
+    }
   }
 
   &.placeholder {
     &::after {
       content: '660 x 490';
-      height: 490px;
-      width: 660px;
+      height: $ipad-height;
+      width: $ipad-width;
     }
   }
 
@@ -24,15 +34,22 @@
     width: 615px;
 
     img {
-      height: 660px;
-      width: 490px;
+      height: $ipad-width;
+      width: $ipad-height;
     }
 
     &.placeholder {
       &::after {
         content: '490 x 660';
-        height: 660px;
-        width: 490px;
+        height: $ipad-width;
+        width: $ipad-height;
+      }
+    }
+
+    .gutenberg-update-item {
+      button {
+        height: $ipad-width;
+        width: $ipad-height;
       }
     }
   }

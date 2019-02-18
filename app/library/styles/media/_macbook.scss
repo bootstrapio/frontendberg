@@ -1,3 +1,6 @@
+$macbook-height: 440px;
+$macbook-width: 700px;
+
 .device-macbook {
   background-image: url('../media/images/macbook-space-gray.png');
   height: 640px;
@@ -5,15 +8,22 @@
   width: 960px;
 
   img {
-    height: 440px;
-    width: 700px;
+    height: $macbook-height;
+    width: $macbook-width;
   }
 
   &.placeholder {
     &::after {
       content: '(W) 700 x (H) 440';
-      height: 440px;
+      height: $macbook-height;
       width: 700px;
+    }
+  }
+
+  .gutenberg-update-item {
+    button {
+      height: $macbook-height;
+      width: $macbook-width;
     }
   }
 }

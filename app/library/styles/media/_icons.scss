@@ -1,19 +1,29 @@
+$icon-height: 64px;
+$icon-width: 64px;
+
 .media-icon {
-  height: 64px;
+  height: $icon-height;
   margin: 0 16px 0 0;
-  min-width: 64px;
+  min-width: $icon-width;
   width: auto;
 
   img {
-    height: 64px;
+    height: $icon-height;
   }
 
   &.placeholder {
     &::after {
       border-radius: 16px;
       content: 'ICON';
-      height: 64px;
-      width: 64px;
+      height: $icon-height;
+      width: $icon-width;
+    }
+  }
+
+  .gutenberg-update-item {
+    button {
+      height: $icon-height;
+      width: $icon-width;
     }
   }
 }
