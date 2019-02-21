@@ -1,5 +1,5 @@
 export const SuperscriptFrontend = ( props ) => {
-	if ( ! props.attributes.displaySuperscript ) {
+	if ( ! props.attributes.displaySuperscript || ! props.attributes.superscriptDisplayIcon && ! props.attributes.superscriptDisplayTitle) {
 		return null;
 	}
 

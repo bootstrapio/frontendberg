@@ -42,7 +42,7 @@ export default class Superscript extends Component {
 	};
 
 	render() {
-		if ( ! this.props.attributes.displaySuperscript ) {
+		if ( ! this.props.attributes.displaySuperscript || ! this.props.attributes.superscriptDisplayIcon && ! this.props.attributes.superscriptDisplayTitle) {
 			return null;
 		}
 

@@ -60,9 +60,7 @@ export default registerBlockType( 'frontendberg/layout', {
 				}
 			>
 				<div class='row group-content'>
-					{( props.attributes.displaySuperscript === false ? '' :
-						<Superscript { ...props } />
-					)}
+					<Superscript { ...props } />
 					{( props.attributes.displayContent === false ? '' :
 						<Fragment>
 							<ContentH3 { ...props } />
@@ -86,9 +84,7 @@ export default registerBlockType( 'frontendberg/layout', {
 		return (
 			<div class='container layout-one'>
 				<div class='row group-content'>
-					{( props.attributes.displaySuperscript === false ? '' :
-						<SuperscriptFrontend { ...props } />
-					)}
+					<SuperscriptFrontend { ...props } />
 					{( props.attributes.displayContent === false ? '' :
 						<Fragment>
 							<ContentH3Frontend { ...props } />
