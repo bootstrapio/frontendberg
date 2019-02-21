@@ -1,13 +1,9 @@
 import classnames from 'classnames';
-
-/** Import our attributes. **/
 import { MediaAttributes } from './attributes';
 import { MediaFrontend } from './frontend';
 
-/** Export for ease of importing in individual blocks. **/
 export { MediaAttributes, MediaFrontend };
 
-/** Internal block libraries **/
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { MediaUpload } = wp.editor;
@@ -44,8 +40,7 @@ export default class Media extends Component {
 						'group-media media-image ' +
 						( this.props.attributes.mediaDeviceType + ' ' ) +
 						( this.props.attributes.mediaDeviceType == 'device-none' || this.props.attributes.mediaDeviceType == 'device-macbook' ? '' : this.props.attributes.mediaDeviceOrientation + ' ') +
-						( this.props.attributes.mediaPlaceholder == false ? '' : 'preview ') +
-						( ! this.props.attributes.mediaURL ? ' placeholder' : '')
+						( this.props.attributes.mediaPlaceholder == false ? '' : 'preview ')
 					}
 				>
 					{ ! this.props.attributes.mediaURL ? (

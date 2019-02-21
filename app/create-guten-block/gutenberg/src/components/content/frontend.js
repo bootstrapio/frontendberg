@@ -1,7 +1,7 @@
 const { Fragment } = wp.element;
 
 export const ContentFrontend = ( props ) => {
-	if ( ! props.attributes.displayContent ) {
+	if ( ! props.attributes.contentDisplayParagraph && ! props.attributes.contentDisplayLink ) {
 		return null;
 	}
 

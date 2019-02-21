@@ -54,20 +54,16 @@ export default registerBlockType( 'frontendberg/layout', {
 			),
 <div class="bd-example-row">
 <div class="bd-example">
-			<div
-				className={
-					'container ' + ( props.attributes.layoutStyle )
-				}
-			>
-				<div class='row group-content'>
-					<Superscript { ...props } />
-					{( props.attributes.displayContent === false ? '' :
-						<Fragment>
-							<ContentH3 { ...props } />
-							<Content { ...props } />
-						</Fragment>
-					)}
-				</div>
+			<div className={'container ' + ( props.attributes.layoutStyle )}>
+				{( props.attributes.displaySuperscript || props.attributes.displayContent ) && (
+					<div class='row group-content'>
+						<Superscript { ...props } />
+							<Fragment>
+								<ContentH3 { ...props } />
+								<Content { ...props } />
+							</Fragment>
+					</div>
+				)}
 				{( props.attributes.displayMedia === false ? '' :
 					<div class="row group-media">
 						<Media { ...props } />
@@ -83,15 +79,15 @@ export default registerBlockType( 'frontendberg/layout', {
 	save: props => {
 		return (
 			<div class='container layout-one'>
-				<div class='row group-content'>
-					<SuperscriptFrontend { ...props } />
-					{( props.attributes.displayContent === false ? '' :
-						<Fragment>
-							<ContentH3Frontend { ...props } />
-							<ContentFrontend { ...props } />
-						</Fragment>
-					)}
-				</div>
+				{( props.attributes.displaySuperscript || props.attributes.displayContent ) && (
+					<div class='row group-content'>
+						<SuperscriptFrontend { ...props } />
+							<Fragment>
+								<ContentH3Frontend { ...props } />
+								<ContentFrontend { ...props } />
+							</Fragment>
+					</div>
+				)}
 				{( props.attributes.displayMedia === false ? '' :
 					<div class="row group-media">
 						<MediaFrontend { ...props } />

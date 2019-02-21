@@ -1,20 +1,14 @@
-/** External dependencies **/
 import classnames from 'classnames';
-
-/** Imports **/
 import { ContentAttributes } from './attributes';
 import { ContentFrontend } from './frontend';
 
-/** Export for ease of importing in individual blocks. **/
 export { ContentAttributes, ContentFrontend };
 
-/** Internal Libraries **/
 const { __ } = wp.i18n;
 const { Component, Fragment} = wp.element;
 const { PlainText, RichText } = wp.editor;
 
 export default class Content extends Component {
-	// Content Paragraph
 	onChangeContentParagraph = value => {
 		const { setAttributes } = this.props;
 		setAttributes( {
@@ -22,7 +16,6 @@ export default class Content extends Component {
 		} );
 	};
 
-	// Content Link
 	onChangeContentLink = value => {
 		const { setAttributes } = this.props;
 		setAttributes( {
@@ -31,7 +24,7 @@ export default class Content extends Component {
 	};
 
 	render() {
-		if ( ! this.props.attributes.displayContent ) {
+		if ( ! this.props.attributes.contentDisplayParagraph && ! this.props.attributes.contentDisplayLink ) {
 			return null;
 		}
 

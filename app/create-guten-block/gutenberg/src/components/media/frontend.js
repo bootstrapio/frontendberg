@@ -10,8 +10,7 @@ export const MediaFrontend = ( props ) => {
 					'group-media media-image ' +
 					( props.attributes.mediaDeviceType + ' ' ) +
 					( props.attributes.mediaDeviceType == 'device-none' || props.attributes.mediaDeviceType == 'device-macbook ' ? '' : props.attributes.mediaDeviceOrientation + ' ') +
-					( props.attributes.mediaPlaceholder == false ? '' : 'preview ') +
-					( ! props.attributes.mediaURL ? 'placeholder' : '')
+					( props.attributes.mediaPlaceholder == false ? '' : 'placeholder ')
 				}
 			>
 				<img
