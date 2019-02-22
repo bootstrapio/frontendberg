@@ -3,9 +3,9 @@ $iphone-width: 510px;
 
 .device-iphone {
   background-image: url('../media/images/iphone-space-gray.png');
-  height: 390px;
+  height: 385px;
   margin: -35px 0;
-  width: 590px;
+  width: 585px;
 
   img {
     height: $iphone-height;
@@ -19,12 +19,10 @@ $iphone-width: 510px;
     }
   }
 
-  &.placeholder {
-    &::after {
-      content: '(W) 510 x (H) 235';
-      height: $iphone-height;
-      width: $iphone-width;
-    }
+  &::after {
+    content: '(W) 510 x (H) 235';
+    height: $iphone-height;
+    width: $iphone-width;
   }
 
   &.portrait {
@@ -39,12 +37,10 @@ $iphone-width: 510px;
       width: $iphone-height;
     }
 
-    &.placeholder {
-      &::after {
-        content: '(W) 235 x (H) 510';
-        height: $iphone-width;
-        width: $iphone-height;
-      }
+    &::after {
+      content: '(W) 235 x (H) 510';
+      height: $iphone-width;
+      width: $iphone-height;
     }
 
     .gutenberg-update-item {

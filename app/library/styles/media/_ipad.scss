@@ -17,6 +17,11 @@ $ipad-width: 660px;
       height: $ipad-height;
       width: $ipad-width;
     }
+
+    span {
+      left: -30px;
+      top: -30px;
+    }
   }
 
   &.placeholder {

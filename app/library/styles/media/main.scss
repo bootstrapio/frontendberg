@@ -16,17 +16,8 @@ figure {
 
   &.placeholder {
     &::after {
-      align-items: center;
       background-color: #f1f1f1;
       background-image: url('../media/images/media-placeholder.svg');
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: 100%;
-      direction: ltr;
-      display: flex;
-      font-size: 12px;
-      justify-content: center;
-      z-index: -1;
     }
 
     img {
@@ -37,6 +28,20 @@ figure {
 
 [class^='device-'], [class*=' device-'] {
   img {
+    z-index: -1;
+  }
+
+  &::after {
+    align-items: center;
+    background-color: #000;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    content: '';
+    direction: ltr;
+    display: flex;
+    font-size: 12px;
+    justify-content: center;
     z-index: -1;
   }
 }

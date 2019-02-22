@@ -40,7 +40,7 @@ export default class Media extends Component {
 						'group-media media-image ' +
 						( this.props.attributes.mediaDeviceType + ' ' ) +
 						( this.props.attributes.mediaDeviceType == 'device-none' || this.props.attributes.mediaDeviceType == 'device-macbook' ? '' : this.props.attributes.mediaDeviceOrientation + ' ') +
-						( this.props.attributes.mediaPlaceholder == false ? '' : 'preview ')
+						( this.props.attributes.mediaPlaceholder == false ? '' : 'placeholder')
 					}
 				>
 					{ ! this.props.attributes.mediaURL ? (
