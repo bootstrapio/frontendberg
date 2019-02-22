@@ -3,9 +3,9 @@ $ipad-width: 660px;
 
 .device-ipad {
   background-image: url('../media/images/ipad-space-gray.png');
-  height: 590px;
+  height: 585px;
   margin: 0 -85px;
-  width: 920px;
+  width: 915px;
 
   img {
     height: $ipad-height;
@@ -24,31 +24,27 @@ $ipad-width: 660px;
     }
   }
 
-  &.placeholder {
-    &::after {
-      content: '660 x 490';
-      height: $ipad-height;
-      width: $ipad-width;
-    }
+  &::after {
+    content: '(W) 660 x (H) 490';
+    height: $ipad-height;
+    width: $ipad-width;
   }
 
   &.portrait {
     background-image: url('../media/images/ipad-space-gray-portrait.png');
-    height: 745px;
+    height: 740px;
     margin: 0 -15px;
-    width: 615px;
+    width: 610px;
 
     img {
       height: $ipad-width;
       width: $ipad-height;
     }
 
-    &.placeholder {
-      &::after {
-        content: '490 x 660';
-        height: $ipad-width;
-        width: $ipad-height;
-      }
+    &::after {
+      content: '(W) 490 x (H) 660';
+      height: $ipad-width;
+      width: $ipad-height;
     }
 
     .gutenberg-update-item {

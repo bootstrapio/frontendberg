@@ -15,7 +15,9 @@ $icon-width: 64px;
     &::after {
       border-radius: 16px;
       content: 'ICON';
+      font-size: 12px;
       height: $icon-height;
+      line-height: $icon-height;
       width: $icon-width;
     }
   }

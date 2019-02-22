@@ -3,27 +3,30 @@ $macbook-width: 700px;
 
 .device-macbook {
   background-image: url('../media/images/macbook-space-gray.png');
-  height: 640px;
+  height: 635px;
   margin: -35px -75px -15px;
-  width: 960px;
+  width: 955px;
 
   img {
     height: $macbook-height;
     width: $macbook-width;
   }
 
-  &.placeholder {
-    &::after {
-      content: '(W) 700 x (H) 440';
-      height: $macbook-height;
-      width: 700px;
-    }
+  &::after {
+    content: '(W) 700 x (H) 440';
+    height: $macbook-height;
+    width: $macbook-width;
   }
 
   .gutenberg-update-item {
     button {
       height: $macbook-height;
       width: $macbook-width;
+    }
+
+    span {
+      left: -40px;
+      top: -40px;
     }
   }
 }
