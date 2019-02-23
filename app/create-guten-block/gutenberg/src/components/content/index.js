@@ -2,6 +2,8 @@ import classnames from 'classnames';
 import { ContentAttributes } from './attributes';
 import { ContentFrontend } from './frontend';
 
+import ContentLink, { ContentLinkAttributes } from '../content-link';
+
 export { ContentAttributes, ContentFrontend };
 
 const { __ } = wp.i18n;
@@ -16,13 +18,6 @@ export default class Content extends Component {
 		} );
 	};
 
-	onChangeContentLink = value => {
-		const { setAttributes } = this.props;
-		setAttributes( {
-			contentLink: value
-		} );
-	};
-
 	render() {
 		if ( ! this.props.attributes.contentDisplayParagraph && ! this.props.attributes.contentDisplayLink ) {
 			return null;
@@ -33,7 +28,7 @@ export default class Content extends Component {
         <div class='col'>
     			{ this.props.attributes.contentDisplayParagraph && (
             <RichText
-              // className = 'content'
+              className = 'content'
               tagName = 'p'
               keepPlaceholderOnFocus = { true }
               placeholder = 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.'
@@ -41,17 +36,7 @@ export default class Content extends Component {
               value = { this.props.attributes.contentParagraph }
             />
           ) }
-    			{ this.props.attributes.contentDisplayLink && (
-            <RichText
-  						className = { 'link' + ( this.props.attributes.contentLinkType == 'default' ? '' : ' ' + this.props.attributes.contentLinkType) }
-  						tagName = 'p'
-  						keepPlaceholderOnFocus = { true }
-  						formattingControls = { [ 'link' ] }
-  						placeholder = { 'Nemo enim ipsam' }
-  						onChange = { this.onChangeContentLink }
-  						value = { this.props.attributes.contentLink }
-  					/>
-    			) }
+					<ContentLink { ...this.props } />
         </div>
       </Fragment>
 		);

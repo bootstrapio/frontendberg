@@ -48,30 +48,29 @@ export default class Superscript extends Component {
 
 		return (
 			<div class='col superscript'>
-
-			{ this.props.attributes.superscriptDisplayIcon && (
-				<figure className = {'group-media media-icon ' + ( ! this.props.attributes.superscriptImageURL ? ' placeholder' : '')}>
-					{ ! this.props.attributes.superscriptImageURL ? (
-						/* <MediaUploadCheck> */
-						<MediaUpload
-							onSelect = { this.onSelectSuperscriptImage }
-							type = 'image'
-							value = {this.props.attributes.superscriptImageURL}
-							render = { ( { open } ) => (
-								<div class="gutenberg-update-item">
-									<span className="add"><i className="fas fa-plus-circle"></i></span>
-									<Button className={ 'button button-large' } onClick={ open }></Button>
-								</div>
-							) }
-						/>
-						/* </MediaUploadCheck> */
-					) : (
-						<div class="gutenberg-update-item">
-							{ this.props.isSelected ? (<span className="remove" onClick={ this.onClickRemoveSuperscriptImage }><i className="fas fa-minus-circle"></i></span>) : null }
-							<img alt={ this.props.attributes.superscriptImageAlt } class="img-fluid" src={ this.props.attributes.superscriptImageURL } />
-						</div>
-					)}
-				</figure>
+				{ this.props.attributes.superscriptDisplayIcon && (
+					<figure className = {'group-media media-icon ' + ( ! this.props.attributes.superscriptImageURL ? ' placeholder' : '')}>
+						{ ! this.props.attributes.superscriptImageURL ? (
+							/* <MediaUploadCheck> */
+							<MediaUpload
+								onSelect = { this.onSelectSuperscriptImage }
+								type = 'image'
+								value = {this.props.attributes.superscriptImageURL}
+								render = { ( { open } ) => (
+									<div class="gutenberg-update-item">
+										<span className="add"><i className="fas fa-plus-circle"></i></span>
+										<Button className={ 'button button-large' } onClick={ open }></Button>
+									</div>
+								) }
+							/>
+							/* </MediaUploadCheck> */
+						) : (
+							<div class="gutenberg-update-item">
+								{ this.props.isSelected ? (<span className="remove" onClick={ this.onClickRemoveSuperscriptImage }><i className="fas fa-minus-circle"></i></span>) : null }
+								<img alt={ this.props.attributes.superscriptImageAlt } class="img-fluid" src={ this.props.attributes.superscriptImageURL } />
+							</div>
+						)}
+					</figure>
 				) }
 				{ this.props.attributes.superscriptDisplayTitle && (
 					<PlainText

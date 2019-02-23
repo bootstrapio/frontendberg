@@ -1,11 +1,6 @@
 export const ContentAttributes = {
 	contentParagraph: {
-		selector: 'p',
-		source: 'children',
-		type: 'array'
-	},
-	contentLink: {
-		selector: 'a',
+		selector: 'p.content',
 		source: 'children',
 		type: 'array'
 	}

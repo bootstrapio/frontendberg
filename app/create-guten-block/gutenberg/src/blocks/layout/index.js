@@ -25,11 +25,6 @@ export default registerBlockType( 'frontendberg/layout', {
 	category: 'frontendberg-layouts',
 	icon: 'sos',
 	attributes: {
-		message: {
-			type: 'array',
-			source: 'children',
-			selector: '.content-block',
-		},
 		...LayoutInspectorAttributes,
 		...SuperscriptInspectorAttributes,
 		...ContentInspectorAttributes,
@@ -38,10 +33,6 @@ export default registerBlockType( 'frontendberg/layout', {
 
 	// Gutenberg
 	edit: props => {
-		// Event handler to update the value of the content when changed in editor.
-		const setMessageAttribute = value => {
-			props.setAttributes( { message: value } );
-		};
 
 		return [
 			!! props.isSelected && (

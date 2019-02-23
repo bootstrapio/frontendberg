@@ -1,17 +1,18 @@
 export const SuperscriptAttributes = {
 	superscriptIconAlt: {
 		attribute: 'alt',
-		selector: 'img',
+		selector: '.superscript img',
 		source: 'attribute',
 		type: 'string'
 	},
 	superscriptIconURL: {
-		selector: 'img',
-		attribute: 'src',
+		attribute: '.src',
+		selector: '.superscript img',
 		source: 'attribute',
 		type: 'string',
 	},
 	superscriptTitle: {
+		selector: '.superscript h5',
 		type: 'string',
 	},
 };
