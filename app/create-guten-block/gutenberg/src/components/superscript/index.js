@@ -79,7 +79,7 @@ export default class Superscript extends Component {
 						keepPlaceholderOnFocus = { true }
 						onChange = { this.onChangeSuperscriptTitle }
 						placeholder = { 'Sed Do Eiusmod' }
-						value = { this.props.attributes.superscriptTitle }
+						value = { ! this.props.attributes.superscriptTitle ? '' : this.props.attributes.superscriptTitle }
 					/>
 				) }
 			</div>

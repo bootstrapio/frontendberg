@@ -1,94 +1,39 @@
-/** BLOCK: Layout One **/
+/** BLOCK: Layout **/
 
-/** External dependencies **/
-import classnames from 'classnames';
-
-/** WordPress dependencies ()*/
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { Fragment} = wp.element;
-const { InspectorControls, MediaUpload, RichText } = wp.editor;
+const { InspectorControls, RichText } = wp.editor;
 
-/** Internal dependencies **/
-import LayoutInspector, { LayoutInspectorAttributes, LayoutInspectorClasses } from '../../components/layout-inspector';
-import Superscript, { SuperscriptAttributes, SuperscriptClasses, SuperscriptFrontend } from '../../components/superscript';
-import SuperscriptInspector, { SuperscriptInspectorAttributes, SuperscriptInspectorClasses } from '../../components/superscript-inspector';
-import Content, { ContentAttributes, ContentClasses, ContentFrontend } from '../../components/content';
-import ContentH3, { ContentH3Attributes, ContentH3Classes, ContentH3Frontend } from '../../components/content-h3';
-import ContentInspector, { ContentInspectorAttributes, ContentInspectorClasses } from '../../components/content-inspector';
-import Media, { MediaAttributes, MediaClasses, MediaFrontend } from '../../components/media';
-import MediaInspector, { MediaInspectorAttributes, MediaInspectorClasses } from '../../components/media-inspector';
+import classnames from 'classnames';
+import ContentH5Editor, { ContentH5Attributes, ContentH5Frontend } from '../../elements/content-h5';
 
-/** Register Block Type **/
 export default registerBlockType( 'frontendberg/layout', {
-	title: 'Layout',
 	category: 'frontendberg-layouts',
+	description: '',
 	icon: 'sos',
+	keywords: [ 'Options' ],
+	title: 'Layout',
 	attributes: {
-		...LayoutInspectorAttributes,
-		...SuperscriptInspectorAttributes,
-		...ContentInspectorAttributes,
-		...MediaInspectorAttributes,
+		...ContentH5Attributes,
 	},
 
-	// Gutenberg
 	edit: props => {
-
 		return [
 			!! props.isSelected && (
-				<InspectorControls key='inspector'>
-					{ LayoutInspector( props ) }
-					{ SuperscriptInspector( props ) }
-					{ ContentInspector( props ) }
-					{ MediaInspector( props ) }
+				<InspectorControls key="inspector">
 				</InspectorControls>
 			),
-<div class="bd-example-row">
-<div class="bd-example">
-			<div className={'container ' + ( props.attributes.layoutStyle )}>
-				{( props.attributes.displaySuperscript === false && props.attributes.displayContent === false ? '' :
-					<div class='row group-content'>
-						<Superscript { ...props } />
-						{( props.attributes.displayContent === false ? '' :
-							<Fragment>
-								<ContentH3 { ...props } />
-								<Content { ...props } />
-							</Fragment>
-						)}
-					</div>
-				)}
-				{( props.attributes.displayMedia === false ? '' :
-					<div class="row group-media">
-						<Media { ...props } />
-					</div>
-				)}
-			</div>
-</div>
-</div>
+			<section>
+				<ContentH5Editor { ...props } />
+			</section>,
 		];
 	},
 
-	// Frontend
 	save: props => {
 		return (
-			<div class='container layout-one'>
-				{( props.attributes.displaySuperscript === false && props.attributes.displayContent === false ? '' :
-					<div class='row group-content'>
-						<SuperscriptFrontend { ...props } />
-						{( props.attributes.displayContent === false ? '' :
-							<Fragment>
-								<ContentH3Frontend { ...props } />
-								<ContentFrontend { ...props } />
-							</Fragment>
-						)}
-					</div>
-				)}
-				{( props.attributes.displayMedia === false ? '' :
-					<div class="row group-media">
-						<MediaFrontend { ...props } />
-					</div>
-				)}
-			</div>
+			<section>
+				<ContentH5Frontend { ...props } />
+			</section>
 		);
 	}
-} );
+});
