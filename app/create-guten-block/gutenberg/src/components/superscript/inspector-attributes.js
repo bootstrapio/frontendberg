@@ -1,6 +1,6 @@
 const SuperscriptInspectorAttributes = {
 	superscriptDisplayIcon: {
-		default: false,
+		default: true,
 		type: 'boolean'
 	},
 	superscriptDisplayTitle: {

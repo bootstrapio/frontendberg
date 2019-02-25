@@ -6,6 +6,7 @@ import classnames from 'classnames';
 import { SuperscriptAttributes } from './attributes';
 import { SuperscriptFrontend } from './frontend';
 import ContentH5Editor from '../../elements/content-h5/';
+import MediaIconEditor from '../../elements/media-icon/';
 
 export { SuperscriptAttributes, SuperscriptFrontend };
 
@@ -17,6 +18,9 @@ export default class SuperscriptEditor extends Component {
 
 		return (
 			<div class='col superscript'>
+				{ this.props.attributes.superscriptDisplayIcon && (
+					<MediaIconEditor { ...this.props } />
+				) }
 				{ this.props.attributes.superscriptDisplayTitle && (
 					<ContentH5Editor { ...this.props } />
 				) }
