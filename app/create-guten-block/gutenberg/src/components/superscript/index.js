@@ -17,7 +17,9 @@ export default class SuperscriptEditor extends Component {
 
 		return (
 			<div class='col superscript'>
-				<ContentH5Editor { ...this.props } />
+				{ this.props.attributes.superscriptDisplayTitle && (
+					<ContentH5Editor { ...this.props } />
+				) }
 			</div>
 		);
 	}

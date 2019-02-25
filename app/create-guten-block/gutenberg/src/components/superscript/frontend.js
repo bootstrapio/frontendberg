@@ -7,7 +7,9 @@ export const SuperscriptFrontend = ( props ) => {
 
 	return (
 		<div class='col superscript'>
-			<ContentH5Frontend { ...props } />
+			{ props.attributes.superscriptDisplayTitle && (
+				<ContentH5Frontend { ...props } />
+			) }
 		</div>
 	);
 };
