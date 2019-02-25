@@ -2,10 +2,11 @@
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { InspectorControls, RichText } = wp.editor;
+const { InspectorControls } = wp.editor;
 
 import classnames from 'classnames';
-import ContentH5Editor, { ContentH5Attributes, ContentH5Frontend } from '../../elements/content-h5';
+import LayoutInspector, { LayoutInspectorAttributes } from '../../components/layout/inspector';
+import SuperscriptEditor, { SuperscriptAttributes, SuperscriptFrontend } from '../../components/superscript';
 
 export default registerBlockType( 'frontendberg/layout', {
 	category: 'frontendberg-layouts',
@@ -14,17 +15,19 @@ export default registerBlockType( 'frontendberg/layout', {
 	keywords: [ 'Options' ],
 	title: 'Layout',
 	attributes: {
-		...ContentH5Attributes,
+		...LayoutInspectorAttributes,
+		...SuperscriptAttributes,
 	},
 
 	edit: props => {
 		return [
 			!! props.isSelected && (
 				<InspectorControls key="inspector">
+					<LayoutInspector { ...props } />
 				</InspectorControls>
 			),
 			<section>
-				<ContentH5Editor { ...props } />
+				<SuperscriptEditor { ...props } />
 			</section>,
 		];
 	},
@@ -32,7 +35,7 @@ export default registerBlockType( 'frontendberg/layout', {
 	save: props => {
 		return (
 			<section>
-				<ContentH5Frontend { ...props } />
+				<SuperscriptFrontend { ...props } />
 			</section>
 		);
 	}

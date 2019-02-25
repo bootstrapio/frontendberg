@@ -8,35 +8,19 @@ import LayoutInspectorClasses from './classes';
 export { LayoutInspectorAttributes, LayoutInspectorClasses };
 
 function LayoutInspector( props ) {
-	// Superscript
-	const DisplaySuperscript = () => {
+	const DisplayContent = () => {
 		return (
 			<ToggleControl
-				label = { 'Superscript' }
-				checked  = { props.attributes.displaySuperscript }
-				onChange = { onChangeDisplaySuperscript }
+				label = { 'Content' }
+				checked  = { props.attributes.displayContent }
+				onChange = { onChangeContentDisplay }
 			/>
 		);
 	};
-	const onChangeDisplaySuperscript = value => {
-		props.setAttributes( { displaySuperscript: value } );
-	};
-
-	// Content
-	const DisplayContent = () => {
-	  return (
-	    <ToggleControl
-	      label = { 'Content' }
-	      checked  = { props.attributes.displayContent }
-	      onChange = { onChangeContentDisplay }
-	    />
-	  );
-	};
 	const onChangeContentDisplay = value => {
-	  props.setAttributes( { displayContent: value } );
+		props.setAttributes( { displayContent: value } );
 	};
 
-	// Media
 	const DisplayMedia = () => {
 	  return (
 	    <ToggleControl
@@ -50,7 +34,19 @@ function LayoutInspector( props ) {
 	  props.setAttributes( { displayMedia: value } );
 	};
 
-	// Layout Type
+	const DisplaySuperscript = () => {
+		return (
+			<ToggleControl
+				label = { 'Superscript' }
+				checked  = { props.attributes.displaySuperscript }
+				onChange = { onChangeDisplaySuperscript }
+			/>
+		);
+	};
+	const onChangeDisplaySuperscript = value => {
+		props.setAttributes( { displaySuperscript: value } );
+	};
+
 	const LayoutStyle = () => {
 		return (
 			<SelectControl
@@ -69,7 +65,6 @@ function LayoutInspector( props ) {
 		props.setAttributes( { layoutStyle: value } );
 	};
 
-	// Inspector Display for Superscript Settings
 	return (
 		<PanelBody
 			initialOpen = { true }
