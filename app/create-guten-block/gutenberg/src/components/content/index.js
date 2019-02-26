@@ -1,11 +1,12 @@
 const { __ } = wp.i18n;
-const { Component } = wp.element;
+const { Component, Fragment } = wp.element;
 const { PlainText } = wp.editor;
 
 import classnames from 'classnames';
 import { ContentAttributes } from './attributes';
 import { ContentFrontend } from './frontend';
 import ContentH3Editor from '../../elements/content-h3/';
+import ContentParagraphEditor from '../../elements/content-paragraph/';
 
 export { ContentAttributes, ContentFrontend };
 
@@ -16,11 +17,18 @@ export default class ContentEditor extends Component {
 		}
 
 		return (
-			<div class='col'>
-				{ this.props.attributes.contentDisplayHeadline && (
-					<ContentH3Editor { ...this.props } />
-				) }
-			</div>
+			<Fragment>
+				<div class='col'>
+					{ this.props.attributes.contentDisplayHeadline && (
+						<ContentH3Editor { ...this.props } />
+					) }
+				</div>
+				<div class='col'>
+					{ this.props.attributes.contentDisplayParagraph && (
+						<ContentParagraphEditor { ...this.props } />
+					) }
+				</div>
+			</Fragment>
 		);
 	}
 }

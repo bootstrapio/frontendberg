@@ -24,6 +24,19 @@ function ContentInspector( props ) {
 			props.setAttributes( { contentDisplayHeadline: value } );
 		};
 
+	  const DisplayContentParagraph = () => {
+	    return (
+	      <ToggleControl
+	        label = { 'Paragraph' }
+	        checked  = { props.attributes.contentDisplayParagraph }
+	        onChange = { onChangeContentDisplayParagraph }
+	      />
+	    );
+	  };
+	  const onChangeContentDisplayParagraph = value => {
+	    props.setAttributes( { contentDisplayParagraph: value } );
+	  };
+
 		return (
 			<PanelBody
 				initialOpen = { true }
@@ -31,6 +44,7 @@ function ContentInspector( props ) {
 			>
 				<PanelRow>
 					{ DisplayContentHeadline() }
+					{ DisplayContentParagraph() }
 				</PanelRow>
 			</PanelBody>
 		);
