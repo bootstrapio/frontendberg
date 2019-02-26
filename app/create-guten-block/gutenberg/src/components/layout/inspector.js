@@ -2,7 +2,7 @@ const { __ } = wp.i18n;
 const { } = wp.editor;
 const { PanelBody, PanelRow, SelectControl, ToggleControl } = wp.components;
 
-import LayoutInspectorAttributes from './attributes';
+import LayoutInspectorAttributes from './inspector-attributes';
 import LayoutInspectorClasses from './classes';
 
 export { LayoutInspectorAttributes, LayoutInspectorClasses };
