@@ -8,6 +8,8 @@ import classnames from 'classnames';
 import LayoutInspector, { LayoutInspectorAttributes } from '../../components/layout/inspector';
 import SuperscriptEditor, { SuperscriptAttributes, SuperscriptFrontend } from '../../components/superscript';
 import SuperscriptInspector, { SuperscriptInspectorAttributes } from '../../components/superscript/inspector';
+import ContentEditor, { ContentAttributes, ContentFrontend } from '../../components/content';
+import ContentInspector, { ContentInspectorAttributes } from '../../components/content/inspector';
 
 export default registerBlockType( 'frontendberg/layout', {
 	category: 'frontendberg-layouts',
@@ -17,8 +19,8 @@ export default registerBlockType( 'frontendberg/layout', {
 	title: 'Layout',
 	attributes: {
 		...LayoutInspectorAttributes,
-		...SuperscriptAttributes,
-		...SuperscriptInspectorAttributes,
+		...SuperscriptAttributes, ...SuperscriptInspectorAttributes,
+		...ContentAttributes, ...ContentInspectorAttributes,
 	},
 
 	edit: props => {
@@ -27,19 +29,14 @@ export default registerBlockType( 'frontendberg/layout', {
 				<InspectorControls key="inspector">
 					<LayoutInspector { ...props } />
 					<SuperscriptInspector { ...props } />
+					<ContentInspector { ...props } />
 				</InspectorControls>
 			),
 			<section>
 				<div class="container layout-one">
 					<div class="row group-content">
 						<SuperscriptEditor { ...props } />
-						<div class="col">
-							<h3>You have a great touch for making movies.</h3>
-						</div>
-						<div class="col">
-								<p>iMovie is even easier to use with the new MacBook Pro, featuring the revolutionary Touch Bar. The most useful commands automatically appear on the keyboard, right where you need them. And MacBook Pro easily powers through demanding 4K video projects so you can edit and export in record time.</p>
-								<a href="#" class="">Layout One</a>
-						</div>
+						<ContentEditor { ...props } />
 					</div>
 					<div class="row group-media">
 						<div class="col">
@@ -56,13 +53,7 @@ export default registerBlockType( 'frontendberg/layout', {
 				<div class="container layout-one">
 					<div class="row group-content">
 						<SuperscriptFrontend { ...props } />
-						<div class="col">
-							<h3>You have a great touch for making movies.</h3>
-						</div>
-						<div class="col">
-								<p>iMovie is even easier to use with the new MacBook Pro, featuring the revolutionary Touch Bar. The most useful commands automatically appear on the keyboard, right where you need them. And MacBook Pro easily powers through demanding 4K video projects so you can edit and export in record time.</p>
-								<a href="#" class="">Layout One</a>
-						</div>
+						<ContentFrontend { ...props } />
 					</div>
 					<div class="row group-media">
 						<div class="col">

@@ -1,20 +1,15 @@
-const { Fragment } = wp.element;
-
-import ContentLink, { ContentLinkFrontend } from '../content-link';
+import { ContentH3Frontend } from '../../elements/content-h3/frontend';
 
 export const ContentFrontend = ( props ) => {
-	if ( ! props.attributes.contentDisplayParagraph && ! props.attributes.contentDisplayLink ) {
+	if ( ! props.attributes.displayContent ) {
 		return null;
 	}
 
 	return (
-    <Fragment>
-  		<div class='col'>
-  			{ props.attributes.contentDisplayParagraph && (
-  				<p className='content'>{ props.attributes.contentParagraph }</p>
-  			) }
-				<ContentLinkFrontend { ...props } />
-  		</div>
-		</Fragment>
+		<div class='col'>
+			{ props.attributes.contentDisplayHeadline && (
+				<ContentH3Frontend { ...props } />
+			) }
+		</div>
 	);
 };
