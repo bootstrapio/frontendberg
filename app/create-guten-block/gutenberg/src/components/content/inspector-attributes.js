@@ -3,6 +3,10 @@ const ContentInspectorAttributes = {
 		default: true,
 		type: 'boolean'
 	},
+	contentDisplayLink: {
+		default: true,
+		type: 'boolean'
+	},
 	contentDisplayParagraph: {
 		default: true,
 		type: 'boolean'

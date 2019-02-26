@@ -37,6 +37,19 @@ function ContentInspector( props ) {
 	    props.setAttributes( { contentDisplayParagraph: value } );
 	  };
 
+	  const DisplayContentLink = () => {
+	    return (
+	      <ToggleControl
+	        label = { 'Link' }
+	        checked  = { props.attributes.contentDisplayLink }
+	        onChange = { onChangeContentDisplayLink }
+	      />
+	    );
+	  };
+	  const onChangeContentDisplayLink = value => {
+	    props.setAttributes( { contentDisplayLink: value } );
+	  };
+
 		return (
 			<PanelBody
 				initialOpen = { true }
@@ -45,6 +58,7 @@ function ContentInspector( props ) {
 				<PanelRow>
 					{ DisplayContentHeadline() }
 					{ DisplayContentParagraph() }
+					{ DisplayContentLink() }
 				</PanelRow>
 			</PanelBody>
 		);

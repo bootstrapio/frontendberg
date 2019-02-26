@@ -7,6 +7,7 @@ import { ContentAttributes } from './attributes';
 import { ContentFrontend } from './frontend';
 import ContentH3Editor from '../../elements/content-h3/';
 import ContentParagraphEditor from '../../elements/content-paragraph/';
+import ContentLinkEditor from '../../elements/content-link/';
 
 export { ContentAttributes, ContentFrontend };
 
@@ -26,6 +27,9 @@ export default class ContentEditor extends Component {
 				<div class='col'>
 					{ this.props.attributes.contentDisplayParagraph && (
 						<ContentParagraphEditor { ...this.props } />
+					) }
+					{ this.props.attributes.contentDisplayLink && (
+						<ContentLinkEditor { ...this.props } />
 					) }
 				</div>
 			</Fragment>
