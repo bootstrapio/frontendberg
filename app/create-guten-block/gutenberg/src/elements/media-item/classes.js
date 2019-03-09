@@ -1,4 +1,4 @@
-function MediaInspectorClasses( props ) {
+function MediaItemInspectorClasses( props ) {
 	return [
 		{ 'landscape': 'landscape' === props.attributes.mediaDeviceOrientation },
 		{ 'portrait': 'portrait' === props.attributes.mediaDeviceOrientation },
@@ -9,4 +9,4 @@ function MediaInspectorClasses( props ) {
 	];
 }
 
-export default MediaInspectorClasses;
+export default MediaItemInspectorClasses;

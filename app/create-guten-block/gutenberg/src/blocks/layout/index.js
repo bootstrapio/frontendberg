@@ -10,6 +10,8 @@ import SuperscriptEditor, { SuperscriptAttributes, SuperscriptFrontend } from '.
 import SuperscriptInspector, { SuperscriptInspectorAttributes } from '../../components/superscript/inspector';
 import ContentEditor, { ContentAttributes, ContentFrontend } from '../../components/content';
 import ContentInspector, { ContentInspectorAttributes } from '../../components/content/inspector';
+import MediaItemEditor, { MediaItemAttributes, MediaItemFrontend } from '../../elements/media-item';
+import MediaItemInspector, { MediaItemInspectorAttributes } from '../../elements/media-item/inspector';
 
 export default registerBlockType( 'frontendberg/layout', {
 	category: 'frontendberg-layouts',
@@ -21,6 +23,7 @@ export default registerBlockType( 'frontendberg/layout', {
 		...LayoutInspectorAttributes,
 		...SuperscriptAttributes, ...SuperscriptInspectorAttributes,
 		...ContentAttributes, ...ContentInspectorAttributes,
+		...MediaItemAttributes, ...MediaItemInspectorAttributes,
 	},
 
 	edit: props => {
@@ -30,18 +33,22 @@ export default registerBlockType( 'frontendberg/layout', {
 					<LayoutInspector { ...props } />
 					<SuperscriptInspector { ...props } />
 					<ContentInspector { ...props } />
+					<MediaItemInspector { ...props } />
 				</InspectorControls>
 			),
 			<section>
-				<div class="container layout-one">
+				<div className={ 'container ' + ( props.attributes.layoutStyle ) }>
 					<div class="row group-content">
 						<SuperscriptEditor { ...props } />
 						<ContentEditor { ...props } />
 					</div>
+					{( props.attributes.displayMedia === false ? '' :
 					<div class="row group-media">
 						<div class="col">
+							<MediaItemEditor { ...props } />
 						</div>
 					</div>
+					)}
 				</div>
 			</section>,
 		];
@@ -50,15 +57,18 @@ export default registerBlockType( 'frontendberg/layout', {
 	save: props => {
 		return (
 			<section>
-				<div class="container layout-one">
+				<div className={ 'container ' + ( props.attributes.layoutStyle ) }>
 					<div class="row group-content">
 						<SuperscriptFrontend { ...props } />
 						<ContentFrontend { ...props } />
 					</div>
+					{( props.attributes.displayMedia === false ? '' :
 					<div class="row group-media">
 						<div class="col">
+							<MediaItemFrontend { ...props } />
 						</div>
 					</div>
+					)}
 				</div>
 			</section>
 		);

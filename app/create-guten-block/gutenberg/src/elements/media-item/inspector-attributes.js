@@ -1,4 +1,4 @@
-const MediaInspectorAttributes = {
+export const MediaItemInspectorAttributes = {
 	mediaDeviceType: {
 		default: 'device-macbook',
 		type: 'string'
@@ -12,5 +12,3 @@ const MediaInspectorAttributes = {
 		type: 'boolean'
 	},
 };
-
-export default MediaInspectorAttributes;

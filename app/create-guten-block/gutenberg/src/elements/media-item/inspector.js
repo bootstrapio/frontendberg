@@ -2,16 +2,15 @@ const { __ } = wp.i18n;
 const { MediaUpload, /* MediaUploadCheck, */ } = wp.editor;
 const { CheckboxControl, PanelBody, PanelRow, RadioControl, SelectControl } = wp.components;
 
-import MediaInspectorAttributes from './attributes';
-import MediaInspectorClasses from './classes';
+import MediaItemInspectorAttributes from './inspector-attributes';
 
-export { MediaInspectorAttributes, MediaInspectorClasses };
+export { MediaItemInspectorAttributes };
 
 function MediaInspector( props ) {
 	if ( ! props.attributes.displayMedia ) {
 		return null;
 	} else {
-		// Device
+
 		const DisplayMediaDeviceType = () => {
 			return (
 				<SelectControl
@@ -33,7 +32,6 @@ function MediaInspector( props ) {
 			props.setAttributes( { mediaDeviceType: value } );
 		};
 
-		// Orientation
 		const DisplayMediaDeviceOrientation = () => {
 			if ( ( 'device-none' == props.attributes.mediaDeviceType ) || ('device-macbook' == props.attributes.mediaDeviceType) ) {
 				return '';
@@ -54,7 +52,6 @@ function MediaInspector( props ) {
 			props.setAttributes( { mediaDeviceOrientation: value } );
 		};
 
-		// Placeholder
 		const DisplayMediaPlaceholder = () => {
 			if ( ( 'device-none' == props.attributes.mediaDeviceType ) ) {
 				return '';
