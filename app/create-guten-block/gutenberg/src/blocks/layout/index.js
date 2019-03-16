@@ -10,8 +10,7 @@ import SuperscriptEditor, { SuperscriptAttributes, SuperscriptFrontend } from '.
 import SuperscriptInspector, { SuperscriptInspectorAttributes } from '../../components/superscript/inspector';
 import ContentEditor, { ContentAttributes, ContentFrontend } from '../../components/content';
 import ContentInspector, { ContentInspectorAttributes } from '../../components/content/inspector';
-import MediaItemEditor, { MediaItemAttributes, MediaItemFrontend } from '../../elements/media-item';
-import MediaItemInspector, { MediaItemInspectorAttributes } from '../../elements/media-item/inspector';
+import MediaInspector, { MediaInspectorAttributes } from '../../components/media/inspector';
 
 export default registerBlockType( 'frontendberg/layout', {
 	category: 'frontendberg-layouts',
@@ -23,7 +22,7 @@ export default registerBlockType( 'frontendberg/layout', {
 		...LayoutInspectorAttributes,
 		...SuperscriptAttributes, ...SuperscriptInspectorAttributes,
 		...ContentAttributes, ...ContentInspectorAttributes,
-		...MediaItemAttributes, ...MediaItemInspectorAttributes,
+		...MediaInspectorAttributes,
 	},
 
 	edit: props => {
@@ -33,7 +32,7 @@ export default registerBlockType( 'frontendberg/layout', {
 					<LayoutInspector { ...props } />
 					<SuperscriptInspector { ...props } />
 					<ContentInspector { ...props } />
-					<MediaItemInspector { ...props } />
+					<MediaInspector { ...props } />
 				</InspectorControls>
 			),
 			<section>
@@ -45,7 +44,7 @@ export default registerBlockType( 'frontendberg/layout', {
 					{( props.attributes.displayMedia === false ? '' :
 					<div class="row group-media">
 						<div class="col">
-							<MediaItemEditor { ...props } />
+							<p>{ props.attributes.mediaType }</p>
 						</div>
 					</div>
 					)}
@@ -65,7 +64,7 @@ export default registerBlockType( 'frontendberg/layout', {
 					{( props.attributes.displayMedia === false ? '' :
 					<div class="row group-media">
 						<div class="col">
-							<MediaItemFrontend { ...props } />
+							<p>{ props.attributes.mediaType }</p>
 						</div>
 					</div>
 					)}
