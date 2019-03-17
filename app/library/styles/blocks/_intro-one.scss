@@ -1,5 +1,7 @@
 .intro-one {
-  text-align: center;
+  &, textarea {
+    text-align: center;  
+  }
 
   .row {
     flex-direction: column;

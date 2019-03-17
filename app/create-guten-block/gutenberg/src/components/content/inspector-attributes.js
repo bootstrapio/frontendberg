@@ -1,6 +1,10 @@
 const ContentInspectorAttributes = {
-	contentDisplayHeadline: {
-		default: true,
+	contentDisplayH2: {
+		default: false,
+		type: 'boolean'
+	},
+	contentDisplayH3: {
+		default: false,
 		type: 'boolean'
 	},
 	contentDisplayLink: {

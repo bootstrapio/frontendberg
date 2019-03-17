@@ -2,6 +2,7 @@ const { __ } = wp.i18n;
 const { } = wp.editor;
 const { PanelBody, PanelRow, ToggleControl } = wp.components;
 
+import classnames from 'classnames';
 import ContentInspectorAttributes from './inspector-attributes';
 
 export { ContentInspectorAttributes };
@@ -11,17 +12,30 @@ function ContentInspector( props ) {
 		return null;
 	} else {
 
-		const DisplayContentHeadline = () => {
+		const DisplayContentH2 = () => {
 			return (
 				<ToggleControl
 					label = { 'Headline' }
-					checked  = { props.attributes.contentDisplayHeadline }
-					onChange = { onChangeContentDisplayHeadline }
+					checked  = { props.attributes.contentDisplayH2 }
+					onChange = { onChangeContentDisplayH2 }
 				/>
 			);
 		};
-		const onChangeContentDisplayHeadline = value => {
-			props.setAttributes( { contentDisplayHeadline: value } );
+		const onChangeContentDisplayH2 = value => {
+			props.setAttributes( { contentDisplayH2: value } );
+		};
+
+		const DisplayContentH3 = () => {
+			return (
+				<ToggleControl
+					label = { 'Headline' }
+					checked  = { props.attributes.contentDisplayH3 }
+					onChange = { onChangeContentDisplayH3 }
+				/>
+			);
+		};
+		const onChangeContentDisplayH3 = value => {
+			props.setAttributes( { contentDisplayH3: value } );
 		};
 
 	  const DisplayContentParagraph = () => {
@@ -56,7 +70,8 @@ function ContentInspector( props ) {
 				title = { 'Content' }
 			>
 				<PanelRow>
-					{ DisplayContentHeadline() }
+					{ classnames(props.className) == 'wp-block-frontendberg-intro' && ( DisplayContentH2() ) }
+					{ classnames(props.className) == 'wp-block-frontendberg-layout' && ( DisplayContentH3() ) }
 					{ DisplayContentParagraph() }
 					{ DisplayContentLink() }
 				</PanelRow>

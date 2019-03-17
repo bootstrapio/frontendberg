@@ -15,6 +15,10 @@ const LayoutInspectorAttributes = {
 		default: 'layout-one',
 		type: 'string'
 	},
+	contentDisplayH3: {
+		default: true,
+		type: 'boolean'
+	},
 };
 
 export default LayoutInspectorAttributes;

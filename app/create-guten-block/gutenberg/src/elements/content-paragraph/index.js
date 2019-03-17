@@ -15,6 +15,7 @@ export default class ContentParagraphEditor extends Component {
 			<RichText
 				tagName = 'div'
 				className = 'content-paragraph'
+				keepPlaceholderOnFocus = { true }
 				multiline = 'p'
 				onChange = { this.onChangeContentParagraph }
 				placeholder = 'Elements Paragraph'

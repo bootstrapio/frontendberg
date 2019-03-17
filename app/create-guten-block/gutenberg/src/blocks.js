@@ -10,4 +10,5 @@
  */
 
 import './blocks/default';
+import './blocks/intro';
 import './blocks/layout';

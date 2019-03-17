@@ -1,16 +1,20 @@
 const IntroInspectorAttributes = {
-	introDisplayHeadline: {
+	displayContent: {
 		default: true,
 		type: 'boolean'
 	},
-	introDisplayLink: {
+	displaySuperscript: {
 		default: true,
 		type: 'boolean'
 	},
-	introDisplayParagraph: {
+	layoutStyle: {
+		default: 'layout-one',
+		type: 'string'
+	},
+	contentDisplayH2: {
 		default: true,
 		type: 'boolean'
-	}
+	},
 };
 
 export default IntroInspectorAttributes;

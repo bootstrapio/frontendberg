@@ -5,6 +5,7 @@ const { PlainText } = wp.editor;
 import classnames from 'classnames';
 import { ContentAttributes } from './attributes';
 import { ContentFrontend } from './frontend';
+import ContentH2Editor from '../../elements/content-h2/';
 import ContentH3Editor from '../../elements/content-h3/';
 import ContentParagraphEditor from '../../elements/content-paragraph/';
 import ContentLinkEditor from '../../elements/content-link/';
@@ -20,7 +21,10 @@ export default class ContentEditor extends Component {
 		return (
 			<Fragment>
 				<div class='col'>
-					{ this.props.attributes.contentDisplayHeadline && (
+					{ this.props.attributes.contentDisplayH2 && (
+						<ContentH2Editor { ...this.props } />
+					) }
+					{ this.props.attributes.contentDisplayH3 && (
 						<ContentH3Editor { ...this.props } />
 					) }
 				</div>

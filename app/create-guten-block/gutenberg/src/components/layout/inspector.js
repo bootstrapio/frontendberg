@@ -49,7 +49,7 @@ function LayoutInspector( props ) {
 	const LayoutStyle = () => {
 		return (
 			<SelectControl
-				label = 'Layout Style'
+				label = 'Style'
 				onChange = { onChangeLayoutStyle }
 				options = {[
 					{ label: 'One', value: 'layout-one' },
