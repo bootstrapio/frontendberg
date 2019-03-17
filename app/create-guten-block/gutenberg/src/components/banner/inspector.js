@@ -20,6 +20,23 @@ function BannerInspector( props ) {
 		props.setAttributes( { displayContent: value } );
 	};
 
+	const DisplayMedia = () => {
+		if ( 'layout-three' !== props.attributes.layoutStyle ) {
+			return '';
+		}
+
+	  return (
+	    <ToggleControl
+	      label = { 'Media' }
+	      checked  = { props.attributes.displayMedia }
+	      onChange = { onChangeMediaDisplay }
+	    />
+	  );
+	};
+	const onChangeMediaDisplay = value => {
+	  props.setAttributes( { displayMedia: value } );
+	};
+
 	const DisplaySuperscript = () => {
 		return (
 			<ToggleControl
@@ -57,8 +74,9 @@ function BannerInspector( props ) {
 			title = { 'Settings' }
 		>
 			<PanelRow>
-				{ DisplaySuperscript() }
 				{ LayoutStyle() }
+				{ DisplaySuperscript() }
+				{ DisplayMedia() }
 			</PanelRow>
 		</PanelBody>
 	);

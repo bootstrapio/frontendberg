@@ -100,7 +100,7 @@
 					<div class="col">
 						<div class="row group-media">
 							<div class="col">
-								<figure class="media-image device-ipad portrait">
+								<figure class="media-item media-image device-ipad portrait">
 									<img alt="" class="img-fluid" src="https://www.placehold.it/490x660">
 								</figure>
 							</div>
@@ -130,7 +130,7 @@
 					<div class="col">
 						<div class="row group-media">
 							<div class="col">
-								<figure class="media-image device-ipad portrait">
+								<figure class="media-item media-image device-ipad portrait">
 									<img alt="" class="img-fluid" src="https://www.placehold.it/490x660">
 								</figure>
 							</div>

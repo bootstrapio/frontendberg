@@ -6,9 +6,9 @@
 
     // Banner Previews | Height of .group-media
     $('.banner-preview .group-media').each(function() {
-      var deviceHeight = $('.media-image', this).height();
+      var deviceHeight = $('.media-item', this).height();
       $(this).height(.66 * deviceHeight);
     });
-    
+
   });
 })(jQuery);

@@ -11,6 +11,8 @@ import SuperscriptEditor, { SuperscriptAttributes, SuperscriptFrontend } from '.
 import SuperscriptInspector, { SuperscriptInspectorAttributes } from '../../components/superscript/inspector';
 import ContentEditor, { ContentAttributes, ContentFrontend } from '../../components/content';
 import ContentInspector, { ContentInspectorAttributes } from '../../components/content/inspector';
+import MediaEditor, { MediaAttributes, MediaFrontend } from '../../components/media';
+import MediaInspector, { MediaInspectorAttributes } from '../../components/media/inspector';
 
 export default registerBlockType( 'frontendberg/banner', {
 	category: 'frontendberg-layouts',
@@ -21,6 +23,7 @@ export default registerBlockType( 'frontendberg/banner', {
 	attributes: {
 		...SuperscriptAttributes, ...SuperscriptInspectorAttributes,
 		...ContentAttributes, ...ContentInspectorAttributes,
+		...MediaAttributes, ...MediaInspectorAttributes,
 		...BannerInspectorAttributes,
 	},
 
@@ -29,7 +32,7 @@ export default registerBlockType( 'frontendberg/banner', {
 			!! props.isSelected && (
 				<InspectorControls key="inspector">
 					<BannerInspector { ...props } />
-					<ContentInspector { ...props } />
+					{ ( 'layout-three' == props.attributes.layoutStyle ) && ( <MediaInspector { ...props } />)}
 				</InspectorControls>
 			),
 			<section>
@@ -39,9 +42,23 @@ export default registerBlockType( 'frontendberg/banner', {
 						...BannerStyleClasses( props ),
 					)}
 				>
-					<div class="row group-content">
-						<SuperscriptEditor { ...props } />
-						<ContentEditor { ...props } />
+					<div class="row">
+						<div class="col">
+							<div class="row group-content">
+								<SuperscriptEditor { ...props } />
+								<ContentEditor { ...props } />
+							</div>
+						</div>
+
+						{ classnames(...BannerStyleClasses( props )) == 'banner-preview' && (
+							<div class="col">
+								<div class="row group-media">
+									<div class="col">
+										<MediaEditor { ...props } />
+									</div>
+								</div>
+							</div>
+						)}
 					</div>
 				</div>
 			</section>,
@@ -57,9 +74,24 @@ export default registerBlockType( 'frontendberg/banner', {
 						...BannerStyleClasses( props ),
 					)}
 				>
-					<div class="row group-content">
-						<SuperscriptFrontend { ...props } />
-						<ContentFrontend { ...props } />
+					<div class="row">
+						<div class="col">
+							<div class="row group-content">
+								<SuperscriptFrontend { ...props } />
+								<ContentFrontend { ...props } />
+							</div>
+						</div>
+						<div class="col">
+							{ classnames(...BannerStyleClasses( props )) == 'banner-preview' && (
+								<div class="col">
+									<div class="row group-media">
+										<div class="col">
+											<MediaFrontend { ...props } />
+										</div>
+									</div>
+								</div>
+							)}
+						</div>
 					</div>
 				</div>
 			</section>

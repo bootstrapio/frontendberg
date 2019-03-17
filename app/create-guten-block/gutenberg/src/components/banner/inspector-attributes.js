@@ -3,6 +3,10 @@ const BannerInspectorAttributes = {
 		default: true,
 		type: 'boolean'
 	},
+	displayMedia: {
+		default: true,
+		type: 'boolean'
+	},
 	displaySuperscript: {
 		default: true,
 		type: 'boolean'
