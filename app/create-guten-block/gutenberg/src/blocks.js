@@ -10,5 +10,6 @@
  */
 
 import './blocks/default';
+import './blocks/banner';
 import './blocks/intro';
 import './blocks/layout';
