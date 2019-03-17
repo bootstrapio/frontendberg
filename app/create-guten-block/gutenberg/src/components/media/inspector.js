@@ -17,9 +17,9 @@ function MediaInspector( props ) {
 					label = 'Type'
 					onChange = { onChangeMediaType }
 					options = {[
+						{ label: 'Placeholder', value: 'media-placeholder' },
 						{ label: 'Image', value: 'media-image' },
 						// { label: 'Video', value: 'media-video' },
-						{ label: 'Placeholder', value: 'media-placeholder' },
 					]}
 					value = { props.attributes.mediaType }
 				/>

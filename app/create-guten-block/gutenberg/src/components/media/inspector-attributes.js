@@ -1,6 +1,6 @@
 const MediaInspectorAttributes = {
 	mediaType: {
-		default: 'media-image',
+		default: 'media-placeholder',
 		type: 'string'
 	},
 	mediaDevice: {
