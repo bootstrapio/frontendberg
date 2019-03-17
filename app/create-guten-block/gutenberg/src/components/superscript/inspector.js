@@ -43,8 +43,8 @@ function SuperscriptInspector( props ) {
 				title = { 'Superscript' }
 			>
 				<PanelRow>
-					{ DisplaySuperscriptIcon() }
 					{ DisplaySuperscriptTitle() }
+					{ DisplaySuperscriptIcon() }
 				</PanelRow>
 			</PanelBody>
 		);

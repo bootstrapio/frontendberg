@@ -4,6 +4,11 @@ const { Component } = wp.element;
 const { MediaUpload } = wp.editor;
 
 import classnames from 'classnames';
+import { MediaIconClasses } from './classes';
+
+export {
+	MediaIconClasses,
+};
 
 export default class MediaIconEditor extends Component {
 	onSelectMediaIcon = media => {
@@ -26,7 +31,13 @@ export default class MediaIconEditor extends Component {
 
 	render() {
 		return (
-			<figure className = {'media-icon'}>
+
+			<figure
+				className={ 'media-icon ' + classnames(
+					this.props.className,
+					...MediaIconClasses( this.props ),
+				)}
+			>
 				{ ! this.props.attributes.mediaIconURL ? (
 					/* <MediaUploadCheck> */
 					<MediaUpload
