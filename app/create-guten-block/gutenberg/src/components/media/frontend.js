@@ -21,7 +21,7 @@ export const MediaFrontend = ( props ) => {
 		>
 			<img
 				alt={ props.attributes.mediaItemAlt }
-				class="img-fluid"
+				class='img-fluid'
 				src={ props.attributes.mediaItemURL }
 			/>
 		</figure>
