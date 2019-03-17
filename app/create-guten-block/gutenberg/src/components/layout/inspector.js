@@ -3,9 +3,8 @@ const { } = wp.editor;
 const { PanelBody, PanelRow, SelectControl, ToggleControl } = wp.components;
 
 import LayoutInspectorAttributes from './inspector-attributes';
-import LayoutInspectorClasses from './classes';
 
-export { LayoutInspectorAttributes, LayoutInspectorClasses };
+export { LayoutInspectorAttributes };
 
 function LayoutInspector( props ) {
 	const DisplayContent = () => {
