@@ -18,7 +18,8 @@ function MediaInspector( props ) {
 					onChange = { onChangeMediaType }
 					options = {[
 						{ label: 'Image', value: 'media-image' },
-						{ label: 'Video', value: 'media-video' }
+						// { label: 'Video', value: 'media-video' },
+						{ label: 'Placeholder', value: 'media-placeholder' },
 					]}
 					value = { props.attributes.mediaType }
 				/>
@@ -76,7 +77,7 @@ function MediaInspector( props ) {
 
 			return (
 				<CheckboxControl
-					label = { 'Preview Placeholder' }
+					label = { 'Placeholder' }
 					checked  = { props.attributes.mediaPlaceholder }
 					onChange = { onChangeMediaPlaceholder }
 				/>
@@ -95,7 +96,6 @@ function MediaInspector( props ) {
 					{ MediaType() }
 					{ DisplayMediaDevice() }
 					{ DisplayMediaOrientation() }
-					{ DisplayMediaPlaceholder() }
 				</PanelRow>
 			</PanelBody>
 		);

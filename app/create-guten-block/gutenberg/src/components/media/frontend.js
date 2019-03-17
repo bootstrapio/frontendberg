@@ -3,6 +3,7 @@ import { MediaDeviceClasses } from './classes-device';
 import { MediaOrientationClasses } from './classes-orientation';
 import { MediaPlaceholderClasses } from './classes-placeholder';
 import { MediaTypeClasses } from './classes-type';
+import { MediaImageFrontend } from '../../elements/media-image/frontend';
 
 export const MediaFrontend = ( props ) => {
 	if ( ! props.attributes.displayMedia ) {
@@ -19,11 +20,9 @@ export const MediaFrontend = ( props ) => {
 				...MediaTypeClasses( props ),
 			)}
 		>
-			<img
-				alt={ props.attributes.mediaItemAlt }
-				class='img-fluid'
-				src={ props.attributes.mediaItemURL }
-			/>
+			{ props.attributes.mediaType == 'media-image' && (
+				<MediaImageFrontend { ...props } />
+			)}
 		</figure>
 	);
 };

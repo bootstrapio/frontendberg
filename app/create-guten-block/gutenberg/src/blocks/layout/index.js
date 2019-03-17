@@ -24,7 +24,7 @@ export default registerBlockType( 'frontendberg/layout', {
 		...LayoutInspectorAttributes,
 		...SuperscriptAttributes, ...SuperscriptInspectorAttributes,
 		...ContentAttributes, ...ContentInspectorAttributes,
-		...MediaInspectorAttributes,
+		...MediaAttributes, ...MediaInspectorAttributes,
 	},
 
 	edit: props => {

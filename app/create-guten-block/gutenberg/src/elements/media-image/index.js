@@ -1,38 +1,36 @@
 const { __ } = wp.i18n;
 const { Button } = wp.components;
-const { Component } = wp.element;
+const { Component, Fragment } = wp.element;
 const { MediaUpload } = wp.editor;
 
 import classnames from 'classnames';
 
-export default class MediaIconEditor extends Component {
-	onSelectMediaIcon = media => {
+export default class MediaImageEditor extends Component {
+	onSelectMedia = media => {
 		const { setAttributes } = this.props;
 		setAttributes( {
-			mediaIconAlt: media.alt,
-			mediaIconID: media.id,
-			mediaIconURL: media.url,
+			mediaImageAlt: media.alt,
+			mediaImageURL: media.url,
 		} );
 	};
 
-	onClickRemoveMediaIcon = () => {
+	onClickRemoveMedia = () => {
 		const { setAttributes } = this.props;
 		setAttributes( {
-			mediaIconAlt: null,
-			mediaIconID: null,
-			mediaIconURL: null,
+			mediaImageAlt: null,
+			mediaImageURL: null,
 		} );
 	};
 
 	render() {
 		return (
-			<figure className = {'media-icon'}>
-				{ ! this.props.attributes.mediaIconURL ? (
+			<Fragment>
+				{ ! this.props.attributes.mediaImageURL ? (
 					/* <MediaUploadCheck> */
 					<MediaUpload
-						onSelect = { this.onSelectMediaIcon }
+						onSelect = { this.onSelectMedia }
 						type = 'image'
-						value = {this.props.attributes.mediaIconURL}
+						value = {this.props.attributes.mediaImageURL}
 						render = { ( { open } ) => (
 							<div class='gutenberg-update-item'>
 								<span className='add'><i className='fas fa-plus-circle'></i></span>
@@ -43,11 +41,11 @@ export default class MediaIconEditor extends Component {
 					/* </MediaUploadCheck> */
 				) : (
 					<div class='gutenberg-update-item'>
-						{ this.props.isSelected ? (<span className='remove' onClick={ this.onClickRemoveMediaIcon }><i className='fas fa-minus-circle'></i></span>) : null }
-						<img alt={ this.props.attributes.mediaIconAlt } class='img-fluid' src={ this.props.attributes.mediaIconURL } />
+						{ this.props.isSelected ? (<span className='remove' onClick={ this.onClickRemoveMedia }><i className='fas fa-minus-circle'></i></span>) : null }
+						<img alt={ this.props.attributes.mediaImageAlt } class='img-fluid' src={ this.props.attributes.mediaImageURL } />
 					</div>
 				)}
-			</figure>
+			</Fragment>
 		);
 	}
 }
