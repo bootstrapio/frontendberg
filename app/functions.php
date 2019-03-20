@@ -5,8 +5,8 @@ add_action( 'admin_enqueue_scripts', function() {
 	wp_register_script('frontendberg', get_theme_root_uri().'/.tmp/library/scripts/admin.js', array(), '', true);
 	wp_enqueue_script('frontendberg');
 
-	wp_register_style( 'frontendberg', get_theme_root_uri().'/.tmp/library/styles/frontendberg.css', array(), '' );
-  wp_enqueue_style('frontendberg');
+	wp_register_style( 'gutenberg', get_theme_root_uri().'/.tmp/library/styles/gutenberg.css', array(), '' );
+  wp_enqueue_style('gutenberg');
 });
 
 // Frontend | Enqueue Assets

@@ -1,0 +1,19 @@
+$fontfamily: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
+
+.edit-post-layout__content {
+  *:focus,
+  textarea:focus,
+  input:focus{
+    outline: 0 !important;
+    outline: none !important;
+  }
+
+  @import
+    '../../../node_modules/bootstrap/scss/bootstrap',
+    'gutenberg/main',
+    'wireframe/main',
+    'frontend/main',
+    'media/main',
+    'blocks/main',
+    'components/main';
+}

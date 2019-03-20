@@ -157,6 +157,39 @@ gulp.task('admin-scripts', () =>
       .pipe(gulp.dest('.tmp/library/scripts'))
 );
 
+gulp.task('gutenberg-styles', () => {
+  const AUTOPREFIXER_BROWSERS = [
+    'ie >= 10',
+    'ie_mob >= 10',
+    'ff >= 30',
+    'chrome >= 34',
+    'safari >= 7',
+    'opera >= 23',
+    'ios >= 7',
+    'android >= 4.4',
+    'bb >= 10'
+  ];
+
+  // For best performance, don't add Sass partials to `gulp.src`
+  return gulp.src([
+    './app/library/styles/gutenberg.scss'
+  ])
+    .pipe($.newer('.tmp/library/styles'))
+    .pipe($.sourcemaps.init())
+    .pipe($.sass({
+      precision: 10
+    }).on('error', $.sass.logError))
+    .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
+    .pipe(gulp.dest('.tmp/library/styles'))
+    // Concatenate and minify styles
+    .pipe($.if('*.css', $.cssnano()))
+    .pipe($.concat('gutenberg.css'))
+    .pipe($.size({title: 'Gutenberg Styles'}))
+    .pipe($.sourcemaps.write('./'))
+    .pipe(gulp.dest(config.distFolder + '/library/styles'))
+    .pipe(gulp.dest('.tmp/library/styles'));
+});
+
 gulp.task('gutenberg-scripts', () =>
     gulp.src([
       './app/create-guten-block/gutenberg/dist/blocks.build.js'
@@ -208,7 +241,7 @@ gulp.task('php', () => {
 gulp.task('clean', () => del(['.tmp', config.distFolder, '!'+ config.distFolder + '/.git'], {dot: true}));
 
 // Watch files for changes & reload
-gulp.task('serve', ['scripts', 'styles', 'admin-scripts', 'gutenberg-scripts' ], () => {
+gulp.task('serve', ['scripts', 'styles', 'admin-scripts', 'gutenberg-scripts', 'gutenberg-styles', ], () => {
   // browserSync({
   //   notify: false,
   //   // Customize the Browsersync console logging prefix
@@ -231,7 +264,7 @@ gulp.task('serve', ['scripts', 'styles', 'admin-scripts', 'gutenberg-scripts' ],
   });
 
   gulp.watch(['app/**/*.php'], reload);
-  gulp.watch(['app/library/styles/**/*.{scss,css}'], ['styles', reload]);
+  gulp.watch(['app/library/styles/**/*.{scss,css}'], ['styles', 'gutenberg-styles', reload]);
   gulp.watch(['app/library/scripts/**/*.js'], ['lint', 'scripts', reload]);
   gulp.watch(['app/library/media/images/**/*'], ['images', reload]);
   gulp.watch(['app/library/vendors/**/*.js'], ['scripts', 'admin-scripts', reload]);
@@ -265,7 +298,7 @@ gulp.task('serve:dist', ['default'], () =>
 gulp.task('default', ['clean'], cb =>
   runSequence(
     'styles',
-    ['lint', 'php', 'scripts', 'admin-scripts', 'gutenberg-scripts', 'images', 'copy'],
+    ['lint', 'php', 'scripts', 'admin-scripts', 'gutenberg-scripts', 'gutenberg-styles', 'images', 'copy'],
     'generate-service-worker',
     cb
   )
