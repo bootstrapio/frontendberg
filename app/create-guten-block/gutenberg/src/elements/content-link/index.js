@@ -17,6 +17,7 @@ export default class ContentLinkEditor extends Component {
 				className = 'content-link'
 				formattingControls = { [ 'link' ] }
 				keepPlaceholderOnFocus = { true }
+				multiline = { false }
 				onChange = { this.onChangeContentLink }
 				placeholder = 'Ut enim ad minim'
 				value = { ! this.props.attributes.contentLink ? '' : this.props.attributes.contentLink }

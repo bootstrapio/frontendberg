@@ -16,7 +16,7 @@ export default class ContentH5Editor extends Component {
 				tagName= 'h5'
 				className = 'h5'
 				onChange = { this.onChangeContentH5 }
-				placeholder = 'Deserunt'
+				placeholder = 'Deserunt Mollit'
 				value = { ! this.props.attributes.contentH5 ? '' : this.props.attributes.contentH5 }
 			/>
 		);

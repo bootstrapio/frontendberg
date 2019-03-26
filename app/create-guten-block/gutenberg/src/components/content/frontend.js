@@ -13,20 +13,12 @@ export const ContentFrontend = ( props ) => {
 	return (
 		<Fragment>
 		<div class='col'>
-			{ props.attributes.contentDisplayH2 && (
-				<ContentH2Frontend { ...props } />
-			) }
-			{ props.attributes.contentDisplayH3 && (
-				<ContentH3Frontend { ...props } />
-			) }
+			{ props.attributes.contentDisplayH2 && ( <ContentH2Frontend { ...props } /> ) }
+			{ props.attributes.contentDisplayH3 && ( <ContentH3Frontend { ...props } /> ) }
 		</div>
 		<div class='col'>
-			{ props.attributes.contentDisplayParagraph && (
-				<ContentParagraphFrontend { ...props } />
-			) }
-			{ props.attributes.contentDisplayLink && (
-				<ContentLinkFrontend { ...props } />
-			) }
+			{ props.attributes.contentDisplayParagraph && ( <ContentParagraphFrontend { ...props } /> ) }
+			{ props.attributes.contentDisplayLink && ( <ContentLinkFrontend { ...props } /> ) }
 		</div>
 		</Fragment>
 	);

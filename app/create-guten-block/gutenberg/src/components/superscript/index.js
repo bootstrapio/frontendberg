@@ -18,12 +18,8 @@ export default class SuperscriptEditor extends Component {
 
 		return (
 			<div class='col superscript'>
-				{ this.props.attributes.superscriptDisplayIcon && (
-					<MediaIconEditor { ...this.props } />
-				) }
-				{ this.props.attributes.superscriptDisplayTitle && (
-					<ContentH5Editor { ...this.props } />
-				) }
+				{ this.props.attributes.superscriptDisplayIcon && ( <MediaIconEditor { ...this.props } /> ) }
+				{ this.props.attributes.superscriptDisplayTitle && ( <ContentH5Editor { ...this.props } /> ) }
 			</div>
 		);
 	}

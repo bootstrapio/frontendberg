@@ -16,7 +16,7 @@ export default class ContentH2Editor extends Component {
 				tagName= 'h2'
 				className = 'h2'
 				onChange = { this.onChangeContentH2 }
-				placeholder = 'Culpa qui officia '
+				placeholder = 'Culpa Qui Oficia'
 				value = { ! this.props.attributes.contentH2 ? '' : this.props.attributes.contentH2 }
 			/>
 		);

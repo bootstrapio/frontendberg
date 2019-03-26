@@ -16,9 +16,9 @@ export default class ContentParagraphEditor extends Component {
 				tagName = 'div'
 				className = 'content-paragraph'
 				keepPlaceholderOnFocus = { true }
-				multiline = 'p'
+				multiline = { true }
 				onChange = { this.onChangeContentParagraph }
-				placeholder = 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.'
+				placeholder = 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam.'
 				value = { ! this.props.attributes.contentParagraph ? '' : this.props.attributes.contentParagraph }
 			/>
 		);

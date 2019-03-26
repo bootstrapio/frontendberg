@@ -21,20 +21,12 @@ export default class ContentEditor extends Component {
 		return (
 			<Fragment>
 				<div class='col'>
-					{ this.props.attributes.contentDisplayH2 && (
-						<ContentH2Editor { ...this.props } />
-					) }
-					{ this.props.attributes.contentDisplayH3 && (
-						<ContentH3Editor { ...this.props } />
-					) }
+					{ this.props.attributes.contentDisplayH2 && ( <ContentH2Editor { ...this.props } /> ) }
+					{ this.props.attributes.contentDisplayH3 && ( <ContentH3Editor { ...this.props } /> ) }
 				</div>
 				<div class='col'>
-					{ this.props.attributes.contentDisplayParagraph && (
-						<ContentParagraphEditor { ...this.props } />
-					) }
-					{ this.props.attributes.contentDisplayLink && (
-						<ContentLinkEditor { ...this.props } />
-					) }
+					{ this.props.attributes.contentDisplayParagraph && ( <ContentParagraphEditor { ...this.props } /> ) }
+					{ this.props.attributes.contentDisplayLink && ( <ContentLinkEditor { ...this.props } /> ) }
 				</div>
 			</Fragment>
 		);

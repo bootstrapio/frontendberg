@@ -8,12 +8,8 @@ export const SuperscriptFrontend = ( props ) => {
 
 	return (
 		<div class='col superscript'>
-			{ props.attributes.superscriptDisplayIcon && (
-				<MediaIconFrontend { ...props } />
-			) }
-			{ props.attributes.superscriptDisplayTitle && (
-				<ContentH5Frontend { ...props } />
-			) }
+			{ props.attributes.superscriptDisplayIcon && ( <MediaIconFrontend { ...props } /> ) }
+			{ props.attributes.superscriptDisplayTitle && ( <ContentH5Frontend { ...props } /> ) }
 		</div>
 	);
 };

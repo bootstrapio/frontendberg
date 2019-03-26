@@ -16,7 +16,7 @@ export default class ContentH3Editor extends Component {
 				tagName= 'h3'
 				className = 'h3'
 				onChange = { this.onChangeContentH3 }
-				placeholder = 'Anim id est laborum'
+				placeholder = 'Anim Id Est Laborum'
 				value = { ! this.props.attributes.contentH3 ? '' : this.props.attributes.contentH3 }
 			/>
 		);
