@@ -4,7 +4,7 @@ const IntroInspectorAttributes = {
 		type: 'boolean'
 	},
 	displaySuperscript: {
-		default: true,
+		default: false,
 		type: 'boolean'
 	},
 	layoutStyle: {
@@ -13,6 +13,10 @@ const IntroInspectorAttributes = {
 	},
 	contentDisplayH2: {
 		default: true,
+		type: 'boolean'
+	},
+	contentDisplayLink: {
+		default: false,
 		type: 'boolean'
 	},
 };
