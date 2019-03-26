@@ -40,7 +40,7 @@ function BannerInspector( props ) {
 	const DisplaySuperscript = () => {
 		return (
 			<ToggleControl
-				label = { 'Superscript' }
+				label = { 'Icon' }
 				checked  = { props.attributes.displaySuperscript }
 				onChange = { onChangeDisplaySuperscript }
 			/>
@@ -74,9 +74,9 @@ function BannerInspector( props ) {
 			title = { 'Settings' }
 		>
 			<PanelRow>
-				{ LayoutStyle() }
 				{ DisplaySuperscript() }
 				{ DisplayMedia() }
+				{ LayoutStyle() }
 			</PanelRow>
 		</PanelBody>
 	);

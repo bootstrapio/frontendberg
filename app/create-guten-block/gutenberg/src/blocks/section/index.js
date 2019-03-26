@@ -19,7 +19,7 @@ export default registerBlockType( 'frontendberg/layout', {
 	description: '',
 	icon: 'sos',
 	keywords: [ 'Options' ],
-	title: 'Layout',
+	title: 'Section',
 	attributes: {
 		...SuperscriptAttributes, ...SuperscriptInspectorAttributes,
 		...ContentAttributes, ...ContentInspectorAttributes,

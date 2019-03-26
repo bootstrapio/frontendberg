@@ -1,66 +1,28 @@
 .components {
-  &-base {
-    &-control__field {
-      margin-bottom: 0;
-    }
+
+  &-base-control {
+    margin: 0 0 5px !important;
+    width: 100%;
   }
 
-  &-panel {
-    &__row {
-      flex-direction: column;
-      align-items: flex-start;
-
-      label {
-        margin: 0;
-        max-width: none;
-      }
-
-      .components-base-control,
-      .components-base-control__field {
-        margin-bottom: 10px;
-      }
-    }
+  &-panel__row {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
-  &-radio {
-    &-control__option {
-      display: inline-block;
-      margin-bottom: 0;
-
-      &:not(:last-child) {
-        margin-right: 10px;
-      }
-    }
+  // RADIO OPTIONS
+  &-radio-control__option {
+    float: left;
   }
 
-  &-select {
-    &-control__input {
-      margin-top: 5px;
-    }
+  // SELECT DROPDOWN
+  &-select-control__input {
+    width: 100%;
   }
 
-  &-toggle {
-    &-control {
-      margin: 0;
-
-      .components-base-control__field {
-        margin: 0;
-      }
-    }
-  }
-
-  .components-modal__content input[type=checkbox],
-  .components-modal__content input[type=radio],
-  .components-popover input[type=checkbox],
-  .components-popover input[type=radio],
-  .edit-post-sidebar input[type=checkbox],
-  .edit-post-sidebar input[type=radio],
-  .editor-block-list__block input[type=checkbox],
-  .editor-block-list__block input[type=radio],
-  .editor-post-permalink input[type=checkbox],
-  .editor-post-permalink input[type=radio],
-  .editor-post-publish-panel input[type=checkbox],
-  .editor-post-publish-panel input[type=radio] {
-    margin-right: 5px;
+  // LABELS
+  &-form-toggle,
+  &-radio-control__input {
+    margin-right: 10px !important;
   }
 }

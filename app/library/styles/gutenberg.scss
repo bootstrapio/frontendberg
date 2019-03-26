@@ -17,3 +17,7 @@ $fontfamily: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue
     'blocks/main',
     'components/main';
 }
+
+.components-panel {
+  @import 'gutenberg/sidebar';
+}
