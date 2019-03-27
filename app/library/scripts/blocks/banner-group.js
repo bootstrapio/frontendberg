@@ -5,9 +5,9 @@
     "use strict";
 
     // Banner Previews | Height of .group-media
-    $('.banner-preview .group-media').each(function() {
-      var deviceHeight = $('.media-item', this).height();
-      $(this).height(.66 * deviceHeight);
+    $('*[class*=" banner-"] .group-media').each(function() {
+      var deviceHeight = $('.media-image', this).height();
+      $('.col', this).height(.66 * deviceHeight);
     });
 
   });

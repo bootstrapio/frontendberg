@@ -1,0 +1,18 @@
+.banner-two {
+  .row {
+    flex: 0 0 50%;
+    flex-direction: column;
+  }
+
+  &:nth-child(odd) {
+    flex-direction: row;
+  }
+
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+
+    .group-media {
+      direction: rtl;
+    }
+  }
+}
