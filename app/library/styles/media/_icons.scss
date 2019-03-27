@@ -13,7 +13,7 @@ $icon-width: 60px;
 
   &.placeholder {
     &::after {
-      border-radius: 15px;
+      border-radius: ($icon-height * .25);
       content: 'ICON';
       font-size: 12px;
       height: $icon-height;

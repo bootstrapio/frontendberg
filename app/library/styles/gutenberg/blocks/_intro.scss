@@ -1,0 +1,49 @@
+$intro-icon-height: 75px;
+$intro-icon-width: 75px;
+
+[class^='intro-'], [class*=' intro-'] {
+  text-align: center;
+
+  // &, h5, .h5 {
+  //   text-align: center;
+  // }
+
+  .media-icon {
+    height: $intro-icon-height;
+    min-width: $intro-icon-width;
+
+    img {
+      height: $intro-icon-height;
+    }
+
+    &.placeholder {
+      &::after {
+        border-radius: ($intro-icon-height * .25);
+        content: 'ICON';
+        height: $intro-icon-height;
+        line-height: $intro-icon-height;
+        width: $intro-icon-width;
+      }
+    }
+
+    .gutenberg-update-item {
+      button {
+        height: $intro-icon-height;
+        width: $intro-icon-width;
+      }
+    }
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .superscript {
+    flex-direction: column;
+    justify-content: center;
+
+    .media-icon {
+      margin: 0 0 15px;
+    }
+  }
+}
