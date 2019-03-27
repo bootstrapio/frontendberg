@@ -1,17 +1,26 @@
-.editor-block-list__layout .editor-block-list__block {
-  max-width: none;
-  padding: 0;
-}
-
-.editor-styles-wrapper {
-  font-family: $fontfamily;
-
-  button, input, textarea {
-    background: transparent;
-    margin: 0;
-    padding: 0;
-  }
-}
+// .editor-block-list__layout .editor-block-list__block {
+//   max-width: none;
+//   padding: 0;
+// }
+//
+// .editor-styles-wrapper {
+//   font-family: $fontfamily;
+//
+//   button, input, textarea {
+//     background: transparent;
+//     margin: 0;
+//     padding: 0;
+//   }
+// }
+//
+// @import
+//   'layout',
+//   'update';
 
 @import
-  'update';
+  'blocks/layout',
+  'blocks/section',
+  'components/content',
+  'components/media',
+  'components/superscript',
+  'elements/media-icon';

@@ -55,6 +55,23 @@
 
     ~ .col {
       padding-left: 96px;
+
+      h3, .h3 {
+        margin-top: 15px;
+      }
+    }
+  }
+}
+
+.banner-two {
+  .superscript {
+    ~ .col {
+      padding-left: 96px;
+
+      &:last-child {
+        padding-top: 15px;
+        padding-left: 15px;
+      }
     }
   }
 }

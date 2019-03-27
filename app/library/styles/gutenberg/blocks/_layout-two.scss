@@ -1,0 +1,18 @@
+.layout-two {
+  .group-content {
+    .col {
+      padding-left: 0;
+      padding-right: 15px;
+
+      &:last-child {
+        padding-left: 15px;
+        padding-right: 0;
+      }
+    }
+
+    .superscript {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

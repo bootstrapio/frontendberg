@@ -19,6 +19,10 @@ const BannerInspectorAttributes = {
 		default: true,
 		type: 'boolean'
 	},
+	superscriptDisplayTitle: {
+		default: false,
+		type: 'boolean'
+	}
 };
 
 export default BannerInspectorAttributes;

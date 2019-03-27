@@ -75,7 +75,6 @@ function BannerInspector( props ) {
 		>
 			<PanelRow>
 				{ DisplaySuperscript() }
-				{ DisplayMedia() }
 				{ LayoutStyle() }
 			</PanelRow>
 		</PanelBody>

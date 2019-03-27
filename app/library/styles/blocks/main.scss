@@ -1,28 +1,5 @@
-[class^='banner-'], [class*=' banner-'],
-[class^='block-'], [class*=' block-'],
-[class^='hero-'], [class*=' hero-'],
-[class^='intro-'], [class*=' intro-'],
-[class^='layout-'], [class*=' layout-'] {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-
-  .col {
-    z-index: 1;
-  }
-
-  .row {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
 @import
   'banner-group',
   'block-group',
   'hero-group',
-  'intro-one',
-  'layout-one',
-  'layout-two',
-  'layout-three';
+  'intro-one';

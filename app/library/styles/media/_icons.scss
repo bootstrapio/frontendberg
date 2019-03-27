@@ -1,9 +1,9 @@
-$icon-height: 64px;
-$icon-width: 64px;
+$icon-height: 60px;
+$icon-width: 60px;
 
 .media-icon {
   height: $icon-height;
-  margin: 0 16px 0 0;
+  margin: 0 15px 0 0;
   min-width: $icon-width;
   width: auto;
 
@@ -13,7 +13,7 @@ $icon-width: 64px;
 
   &.placeholder {
     &::after {
-      border-radius: 16px;
+      border-radius: 15px;
       content: 'ICON';
       font-size: 12px;
       height: $icon-height;

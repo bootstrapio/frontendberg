@@ -1,0 +1,28 @@
+section {
+  overflow: hidden;
+  padding: 30px 0;
+
+  ~ section:nth-of-type(even) {
+    background-color: #FAFAFA;
+  }
+
+  .container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 825px;
+    width: 100%;
+
+    .col {
+      z-index: 1;
+    }
+  }
+
+  // [class^='banner-'], [class*=' banner-'],
+  // [class^='block-'], [class*=' block-'],
+  // [class^='hero-'], [class*=' hero-'],
+  // [class^='intro-'], [class*=' intro-'],
+  // [class^='layout-'], [class*=' layout-'] {
+  // }
+}

@@ -1,27 +1,29 @@
-@import
-  '../../../node_modules/bootstrap/scss/bootstrap';
-
 $fontfamily: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
 
-*:focus,
-textarea:focus,
-input:focus{
-  outline: 0 !important;
-  outline: none !important;
-}
-
-.frontendberg,
-.editor-block-list__layout {
-  @import
-    'wireframe/main',
-    'frontend/main',
-    'media/main',
-    'blocks/main',
-    'components/main';
-}
-
-.block-editor {
-  @import
-  '../../../node_modules/bootstrap/scss/type.scss',
+@import
+  '../../../node_modules/bootstrap/scss/bootstrap',
+  'wireframe/main',
+  'media/main',
   'gutenberg/main';
-}
+
+// *:focus,
+// textarea:focus,
+// input:focus{
+//   outline: 0 !important;
+//   outline: none !important;
+// }
+//
+// .frontendberg,
+// .editor-block-list__layout {
+//   @import
+//     'wireframe/main',
+//     'media/main',
+//     'blocks/main',
+//     'components/main';
+// }
+
+// .block-editor {
+//   @import
+//   '../../../node_modules/bootstrap/scss/type.scss',
+//   'gutenberg/main';
+// }
