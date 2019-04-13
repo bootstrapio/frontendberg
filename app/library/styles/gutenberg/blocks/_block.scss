@@ -1,0 +1,25 @@
+.block-group:not(:empty) {
+  flex-direction: row;
+  justify-content: center;
+  padding-left: 0;
+  padding-right: 0;
+
+  [class^='group-'],
+  [class*=' group-'] {
+    // flex: 0 0 50%;
+    flex-direction: column;
+    flex-grow: 1;
+    margin: 0;
+    padding: 0 15px;
+
+    figure {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .col {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

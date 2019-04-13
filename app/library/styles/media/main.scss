@@ -18,10 +18,23 @@ figure {
     &::after {
       background-color: #f1f1f1;
       background-image: url('../media/images/media-placeholder.svg');
+      position: absolute;
     }
 
     img {
       display: none;
+    }
+  }
+
+  .gutenberg-update-item {
+    z-index: 1;
+
+    button {
+      opacity: 0;
+    }
+
+    span {
+      position: absolute;
     }
   }
 }

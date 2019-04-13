@@ -2,11 +2,10 @@ $intro-icon-height: 75px;
 $intro-icon-width: 75px;
 
 [class^='intro-'], [class*=' intro-'] {
-  text-align: center;
 
-  // &, h5, .h5 {
-  //   text-align: center;
-  // }
+  &, textarea {
+    text-align: center;
+  }
 
   .media-icon {
     height: $intro-icon-height;
