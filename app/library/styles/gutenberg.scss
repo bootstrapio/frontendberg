@@ -19,6 +19,7 @@ $fontfamily: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue
 
   @import
     '../../../node_modules/bootstrap/scss/bootstrap',
+    'gutenberg/editor',
     'gutenberg/main',
     'wireframe/main',
     // 'frontend/main',
