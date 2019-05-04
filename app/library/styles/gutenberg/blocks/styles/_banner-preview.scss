@@ -6,6 +6,9 @@
     > .col {
       flex: 0 0 50%;
     }
+
+    // Get Preview to only show 66% of device
+    align-items: flex-end;
   }
 
   .group-content {
@@ -13,6 +16,9 @@
   }
 
   .group-media {
+    // Get Preview to only show 66% of device
+    margin-bottom: 0;
+        
     .col {
       flex: auto;
     }

@@ -2,7 +2,7 @@ $iphone-height: 235px;
 $iphone-width: 510px;
 
 .device-iphone {
-  background-image: url('../media/images/iphone-space-gray.png');
+  // background-image: url('../media/images/iphone-space-gray.png');
   height: 385px;
   margin: -35px 0;
   width: 585px;
@@ -25,8 +25,14 @@ $iphone-width: 510px;
     width: $iphone-width;
   }
 
+  &::before {
+    background-image: url('../media/images/iphone-space-gray.png');
+    height: 385px;
+    width: 585px;
+  }
+
   &.portrait {
-    background-image: url('../media/images/iphone-space-gray-portrait.png');
+    // background-image: url('../media/images/iphone-space-gray-portrait.png');
     height: 590px;
     // margin: 0 -35px;
     margin: 0 auto;
@@ -41,6 +47,12 @@ $iphone-width: 510px;
       content: '(W) 235 x (H) 510';
       height: $iphone-width;
       width: $iphone-height;
+    }
+
+    &::before {
+      background-image: url('../media/images/iphone-space-gray-portrait.png');
+      height: 590px;
+      width: 390px;
     }
 
     .gutenberg-update-item {

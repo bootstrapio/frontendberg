@@ -3,11 +3,11 @@
 
   // Your custom JavaScript goes here
   jQuery(document).ready(function($) {
-    "use strict";
+    'use strict';
     $('figure').each(function() {
-      var img = $('img', this).length,
-        imgHeight = $('img', this).height(),
-        imgWidth = $('img', this).width();
+      var img = $('img', this).length;
+      var imgHeight = $('img', this).height();
+      var imgWidth = $('img', this).width();
 
       // $(this).height(imgHeight);
 
@@ -20,7 +20,7 @@
         // $(this).height(imgHeight);
       }
 
-      $(this).has('.device-none').each(function(i) {
+      $(this).has('.device-none').each(function() {
         if (imgWidth < imgHeight) {
           $(this).addClass('portrait');
         } else {

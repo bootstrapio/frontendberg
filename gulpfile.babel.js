@@ -241,7 +241,7 @@ gulp.task('php', () => {
 gulp.task('clean', () => del(['.tmp', config.distFolder, '!'+ config.distFolder + '/.git'], {dot: true}));
 
 // Watch files for changes & reload
-gulp.task('serve', ['scripts', 'styles', 'admin-scripts', 'gutenberg-scripts', 'gutenberg-styles', ], () => {
+gulp.task('serve', ['scripts', 'styles', 'images', 'admin-scripts', 'gutenberg-scripts', 'gutenberg-styles', ], () => {
   // browserSync({
   //   notify: false,
   //   // Customize the Browsersync console logging prefix

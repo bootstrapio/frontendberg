@@ -45,9 +45,9 @@ figure {
     z-index: -1;
   }
 
-  &::after {
+  &::after,
+  &::before {
     align-items: center;
-    background-color: #191e23;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -57,7 +57,16 @@ figure {
     font-size: 12px;
     justify-content: center;
     position: absolute;
+  }
+
+  &::after {
+    background-color: #191e23;
     z-index: -2;
+  }
+
+  &::before {
+    pointer-events: none;
+    z-index: 1;
   }
 }
 
