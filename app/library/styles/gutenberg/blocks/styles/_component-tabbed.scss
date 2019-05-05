@@ -1,0 +1,22 @@
+[class^='components-tabbed-'], [class*=' components-tabbed-'] {
+  .nav-item {
+    position: relative;
+
+    .tab-actions {
+      height: 54px;
+      position: absolute;
+      top: 0;
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .nav-link {
+    &, textarea {
+      text-align: center;
+    }
+  }
+}
