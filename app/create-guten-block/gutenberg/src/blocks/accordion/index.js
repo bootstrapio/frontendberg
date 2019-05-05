@@ -193,10 +193,8 @@ export default  registerBlockType( 'frontendberg/accordion', {
 								value={ value.content }
 							/>
 						</a>
-						<div class="tab-actions">
 							<DragHandle />
 							<span className={ 'dashicons dashicons-minus remove-tab-icon' + ( propz.attributes.tabsTitle.length === 1 ? ' ub-hide' : '' ) } onClick={ () => onRemoveTitle(i) }></span>
-						</div>
 					</li>
 				);
 			});
@@ -209,9 +207,9 @@ export default  registerBlockType( 'frontendberg/accordion', {
 						{ items.map( ( value, index ) => {
 							return <block.SortableItem propz={ propz } key={ `item-${ index }` } i={ index } index={ index } value={ value } onChangeTitle={ onChangeTitle } onRemoveTitle={ onRemoveTitle } toggleTitle={ toggleTitle } />;
 						} ) }
-						<div className={ className + '-tab-title-wrap' } key={ propz.attributes.tabsTitle.length } onClick={ () => onAddTab( propz.attributes.tabsTitle.length ) } >
+						<li className={ className + '-tab-title-wrap nav-item' } key={ propz.attributes.tabsTitle.length } onClick={ () => onAddTab( propz.attributes.tabsTitle.length ) } >
 							<span className="dashicons dashicons-plus-alt"></span>
-						</div>
+						</li>
 					</ul>
 				);
 			} );
