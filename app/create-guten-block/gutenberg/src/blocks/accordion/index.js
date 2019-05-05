@@ -181,8 +181,6 @@ export default  registerBlockType( 'frontendberg/accordion', {
 						<a
 							aria-controls='contact' aria-selected='false' data-toggle='tab' role='tab'
 							className={ propz.className + '-tab-title nav-link' + ( propz.attributes.activeTab === i ? ' active' : '' ) }
-							href = { '#tab-title-' + i }
-							id = { 'tab-title-' + i }
 							// style = { { backgroundColor: propz.attributes.activeTab === i ? propz.attributes.theme : 'initial', color: propz.attributes.activeTab === i ? propz.attributes.titleColor: '#000000' } }
 						>
 							<PlainText
@@ -219,7 +217,7 @@ export default  registerBlockType( 'frontendberg/accordion', {
 			isSelected && (
 				<Inspector { ...{ attributes, onThemeChange, onTitleColorChange } } key="inspector" />
 			),
-			<div className={ className + '-holder components-tabbed-horizontal' }>
+			<div className={ className + '-holder components-tabbed-horizontal' } key="tabber">
 					{
 						<block.SortableList axis="x" propz={ props } items={ attributes.tabsTitle } onSortEnd={ onSortEnd } useDragHandle={ true } onChangeTitle={ onChangeTabTitle } onRemoveTitle={ removeTab } toggleTitle={ showControls } onAddTab={ addTab } />
 					}
