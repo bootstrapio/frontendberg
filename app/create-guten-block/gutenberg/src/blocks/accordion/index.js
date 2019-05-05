@@ -123,7 +123,7 @@ export default  registerBlockType( 'frontendberg/accordion', {
 		};
 
 		const addTab = ( i ) => {
-			attributes.tabsTitle[ i ] = { content: 'Nemo' };
+			attributes.tabsTitle[ i ] = { content: '' };
 			setAttributes( { tabsTitle: attributes.tabsTitle } );
 
 			attributes.tabsContent[ i ] = { content: '' };
@@ -228,14 +228,15 @@ export default  registerBlockType( 'frontendberg/accordion', {
 							attributes.tabsContent.map( ( tabContent, i ) => {
 								return <div className={ className + '-tab-content-wrap tab-pane fade' + ( attributes.activeTab === i ? ' show active' : ' ub-hide' ) } key={ i }>
 									<RichText
-										tagName="div"
-										className={ className + '-tab-content' }
+										tagName='div'
+										className={ className + '-tab-content content-paragraph' }
 										value={ tabContent.content }
 										formattingControls={ [ 'bold', 'italic', 'strikethrough', 'link' ] }
 										isSelected={ attributes.activeControl === 'tab-content-' + i && isSelected }
 										onClick={ () => showControls( 'tab-content', i ) }
 										onChange={ ( content ) => onChangeTabContent( content, i ) }
-										placeholder="Enter the Tab Content here..."
+										keepPlaceholderOnFocus = { true }
+										placeholder = 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam.'
 									/>
 								</div>;
 							} )
@@ -270,7 +271,7 @@ export default  registerBlockType( 'frontendberg/accordion', {
 					{
 						props.attributes.tabsContent.map( ( value, i ) => {
 							return <div className={ className + '-tab-content-wrap tab-pane fade' + ( activeTab === i ? ' show active' : ' ub-hide' ) } key={ i }>
-								<div className={ className + '-tab-content' }>
+								<div className={ className + '-tab-content content-paragraph' }>
 									{ value.content }
 								</div>
 							</div>;
