@@ -10,7 +10,7 @@
  */
 
 import './blocks/default';
-// import './blocks/accordion';
+import './blocks/accordion';
 import './blocks/banner';
 import './blocks/intro';
 import './blocks/layout';
