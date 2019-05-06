@@ -12,7 +12,7 @@ import {
 	SortableHandle,
 	arrayMove,
 } from 'react-sortable-hoc';
-import Inspector from './components/inspector';
+import TabsInspector, { TabInspectorAttributes } from '../../components/tabs/inspector';
 
 export default  registerBlockType( 'frontendberg/accordion', {
 	category: 'frontendberg-layouts',
@@ -36,14 +36,6 @@ export default  registerBlockType( 'frontendberg/accordion', {
 			type: 'number',
 			default: 0,
 		},
-		theme: {
-			type: 'string',
-			default: '#eeeeee',
-		},
-		titleColor: {
-			type: 'string',
-			default: '#000000'
-		},
 		tabsContent: {
 			source: 'query',
 			selector: '.wp-block-ub-tabbed-content-tab-content-wrap',
@@ -66,6 +58,7 @@ export default  registerBlockType( 'frontendberg/accordion', {
 				},
 			},
 		},
+		...TabInspectorAttributes,
 	},
 
 	edit: function( props ) {
@@ -151,9 +144,6 @@ export default  registerBlockType( 'frontendberg/accordion', {
 			updateTimeStamp();
 		};
 
-		const onThemeChange = ( value ) => setAttributes( { theme: value } );
-		const onTitleColorChange = ( value ) => setAttributes( { titleColor: value } );
-
 		if ( attributes.tabsContent.length === 0 ) {
 			addTab( 0 );
 		}
@@ -215,7 +205,9 @@ export default  registerBlockType( 'frontendberg/accordion', {
 
 		return [
 			isSelected && (
-				<Inspector { ...{ attributes, onThemeChange, onTitleColorChange } } key="inspector" />
+				<InspectorControls key="inspector">
+					<TabsInspector { ...props } />
+				</InspectorControls>
 			),
 			<div className={ className + '-holder components-tabbed-horizontal' } key="tabber">
 					{
@@ -247,14 +239,13 @@ export default  registerBlockType( 'frontendberg/accordion', {
 	save: function( props ) {
 		const className = 'wp-block-ub-tabbed-content';
 
-		const { activeTab, theme, titleColor } = props.attributes;
+		const { activeTab } = props.attributes;
 
 		return <div data-id={ props.attributes.id } className={ className + '-holder components-tabbed-horizontal' }>
 				<ul className={ className + '-tabs-title nav nav-tabs' } role='tablist'>
 					{
 						props.attributes.tabsTitle.map( ( value, i ) => {
-							return <div
-								className={ className + '-tab-title-wrap' + ( activeTab === i ? ' active' : '' ) }
+							return <div className={ className + '-tab-title-wrap' + ( activeTab === i ? ' active' : '' ) }
 								key={ i }
 								// style={ { backgroundColor: activeTab === i ? theme : 'initial', borderColor: activeTab === i ? theme : 'lightgrey', color: activeTab === i ? titleColor: '#000000' } }
 								>
