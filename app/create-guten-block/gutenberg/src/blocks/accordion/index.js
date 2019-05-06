@@ -12,6 +12,9 @@ import {
 	SortableHandle,
 	arrayMove,
 } from 'react-sortable-hoc';
+
+import classnames from 'classnames';
+import TabEditor, { TabStyleClasses } from '../../components/tabs/';
 import TabsInspector, { TabInspectorAttributes } from '../../components/tabs/inspector';
 
 export default  registerBlockType( 'frontendberg/accordion', {
@@ -182,7 +185,7 @@ export default  registerBlockType( 'frontendberg/accordion', {
 							/>
 						</a>
 							<DragHandle />
-							<span className={ 'dashicons dashicons-minus remove-tab-icon' + ( propz.attributes.tabsTitle.length === 1 ? ' ub-hide' : '' ) } onClick={ () => onRemoveTitle(i) }></span>
+							<span className={ 'dashicons dashicons-minus remove-tab-icon' + ( propz.attributes.tabsTitle.length === 1 ? ' d-none' : '' ) + ( propz.attributes.activeTab === i ? ' d-none' : '' ) } onClick={ () => onRemoveTitle(i) }></span>
 					</li>
 				);
 			});
@@ -209,14 +212,17 @@ export default  registerBlockType( 'frontendberg/accordion', {
 					<TabsInspector { ...props } />
 				</InspectorControls>
 			),
-			<div className={ className + '-holder components-tabbed-horizontal' } key="tabber">
-					{
-						<block.SortableList axis="x" propz={ props } items={ attributes.tabsTitle } onSortEnd={ onSortEnd } useDragHandle={ true } onChangeTitle={ onChangeTabTitle } onRemoveTitle={ removeTab } toggleTitle={ showControls } onAddTab={ addTab } />
-					}
+			<section>
+			<div className={ className + '-holder container ' + classnames( props.className, ...TabStyleClasses( props ), )} key="tabber">
+			<div class="row">
+				<div className={ ( classnames(...TabStyleClasses( props )) === 'component-tab-horizontal' ? 'col-12' : 'col-3' ) }>
+					{ <block.SortableList axis="x" propz={ props } items={ attributes.tabsTitle } onSortEnd={ onSortEnd } useDragHandle={ true } onChangeTitle={ onChangeTabTitle } onRemoveTitle={ removeTab } toggleTitle={ showControls } onAddTab={ addTab } /> }
+				</div>
+				<div className={ ( classnames(...TabStyleClasses( props )) === 'component-tab-horizontal' ? 'col-12' : 'col-9' ) }>
 					<div className={ className + '-tabs-content tab-content' }>
 						{
 							attributes.tabsContent.map( ( tabContent, i ) => {
-								return <div className={ className + '-tab-content-wrap tab-pane fade' + ( attributes.activeTab === i ? ' show active' : ' ub-hide' ) } key={ i }>
+								return <div className={ className + '-tab-content-wrap tab-pane fade' + ( attributes.activeTab === i ? ' show active' : ' d-none' ) } key={ i }>
 									<RichText
 										tagName='div'
 										className={ className + '-tab-content content-paragraph' }
@@ -232,7 +238,10 @@ export default  registerBlockType( 'frontendberg/accordion', {
 							} )
 						}
 					</div>
-				</div>,
+				</div>
+			</div>
+			</div>
+			</section>,
 		];
 	},
 
@@ -241,7 +250,11 @@ export default  registerBlockType( 'frontendberg/accordion', {
 
 		const { activeTab } = props.attributes;
 
-		return <div data-id={ props.attributes.id } className={ className + '-holder components-tabbed-horizontal' }>
+		return (
+		<section>
+		<div data-id={ props.attributes.id } className={ className + '-holder container ' + classnames( props.className, ...TabStyleClasses( props ), )} key="tabber">
+		<div class="row">
+			<div className={ ( classnames(...TabStyleClasses( props )) === 'component-tab-horizontal' ? 'col-12' : 'col-3' ) }>
 				<ul className={ className + '-tabs-title nav nav-tabs' } role='tablist'>
 					{
 						props.attributes.tabsTitle.map( ( value, i ) => {
@@ -256,10 +269,12 @@ export default  registerBlockType( 'frontendberg/accordion', {
 						} )
 					}
 				</ul>
+			</div>
+			<div className={ ( classnames(...TabStyleClasses( props )) === 'component-tab-horizontal' ? 'col-12' : 'col-9' ) }>
 				<div className={ className + '-tabs-content tab-content' }>
 					{
 						props.attributes.tabsContent.map( ( value, i ) => {
-							return <div className={ className + '-tab-content-wrap tab-pane fade' + ( activeTab === i ? ' show active' : ' ub-hide' ) } key={ i }>
+							return <div className={ className + '-tab-content-wrap tab-pane fade' + ( activeTab === i ? ' show active' : ' d-none' ) } key={ i }>
 								<div className={ className + '-tab-content content-paragraph' }>
 									{ value.content }
 								</div>
@@ -267,6 +282,10 @@ export default  registerBlockType( 'frontendberg/accordion', {
 						} )
 					}
 				</div>
-			</div>;
+			</div>
+		</div>
+		</div>
+		</section>
+		);
 	},
 } );

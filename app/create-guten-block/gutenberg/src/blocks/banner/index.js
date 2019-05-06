@@ -81,7 +81,6 @@ export default registerBlockType( 'frontendberg/banner', {
 								<ContentFrontend { ...props } />
 							</div>
 						</div>
-						<div class="col">
 							{ classnames(...BannerStyleClasses( props )) == 'banner-preview' && (
 								<div class="col">
 									<div class="row group-media">
@@ -91,7 +90,6 @@ export default registerBlockType( 'frontendberg/banner', {
 									</div>
 								</div>
 							)}
-						</div>
 					</div>
 				</div>
 			</section>

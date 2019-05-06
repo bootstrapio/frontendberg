@@ -1,4 +1,4 @@
-[class^='components-tabs-'], [class*=' components-tabs-'] {
+[class^='component-tab-'], [class*=' component-tab-'] {
   .nav-item {
     position: relative;
 
@@ -35,5 +35,15 @@
     &, textarea {
       text-align: center;
     }
+  }
+
+  > .row {
+    width: 100%
+  }
+}
+
+.component-tab-vertical {
+  .nav-tabs {
+    flex-direction: column !important;
   }
 }
